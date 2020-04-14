@@ -1,0 +1,7 @@
+<resources>
+    <!-- 定义文字标签的属性 -->
+    <declare-styleable name="TagsLayout">
+        <attr name="tagVerticalSpace" format="dimension" />
+        <attr name="tagHorizontalSpace" format="dimension" />
+    </declare-styleable>
+</resources>

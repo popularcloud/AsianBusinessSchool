@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.nd.abs.widget.DisInterceptNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipChildren="false"
+    android:clipToPadding="false">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="176dp">
+        <LinearLayout
+            android:id="@+id/user_head_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.nd.abs.widget.ImageCycleView
+                android:id="@+id/ad_view"
+                android:layout_width="match_parent"
+                android:layout_height="176dp"
+                android:scaleType="centerCrop"
+                android:tag="overScroll"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</com.nd.abs.widget.DisInterceptNestedScrollView>

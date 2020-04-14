@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <!-- 线条灰 -->
+    <color name="f0_gray_line">#f0f1f6</color>
+    <color name="white">#ffffff</color>
+    <color name="blue_yq">#0096FF</color>
+    <color name="gray_99">#ff999999</color>
+    <!-- 黑色66 -->
+    <color name="black_66">#666666</color>
+    <color name="black">#000000</color>
+    <color name="btn_blue_nomal">#1481ff</color>
+    <!-- 灰色f5 -->
+    <color name="gray_f5">#f5f5f5</color>
+</resources>

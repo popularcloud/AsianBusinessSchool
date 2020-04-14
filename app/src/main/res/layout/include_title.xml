@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="46dp"
+    android:id="@+id/rl_title"
+    android:background="#ffffff">
+    <com.nd.abs.widget.MyTextView
+        android:id="@+id/txtActionbarTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:textColor="#000000"
+        android:text=""
+        android:textSize="18sp" />
+    <ImageView
+        android:onClick="onBack"
+        android:id="@+id/img_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:padding="15dp"
+        android:src="@mipmap/ic_black_back" />
+    <TextView
+        android:id="@+id/tvQd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:textColor="#000000"
+        android:layout_marginRight="15dp"
+        android:text="提交"
+        android:textSize="15sp"
+        android:visibility="gone"/>
+    <ImageView
+        android:id="@+id/imgRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:paddingLeft="20dp"
+        android:paddingRight="15dp"
+        android:visibility="gone" />
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#f1f0f6"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>
