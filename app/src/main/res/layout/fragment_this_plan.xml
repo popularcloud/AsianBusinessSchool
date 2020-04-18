@@ -6,5 +6,61 @@
     xmlns:lee="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <include layout="@layout/include_title" />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rBtnUnderway"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="学习计划"
+            android:checked="true"
+            android:textColor="@drawable/blue_or_black_selector" />
+
+        <RadioButton
+            android:id="@+id/rBtnFinish"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="调整计划"
+            android:textColor="@drawable/blue_or_black_selector" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <View
+            android:id="@+id/viewLine1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/btn_blue_nomal"
+            android:visibility="visible" />
+
+        <View
+            android:id="@+id/viewLine3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/btn_blue_nomal"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <com.nd.abs.widget.CustomViewPager
+        android:id="@+id/cViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></com.nd.abs.widget.CustomViewPager>
 
 </LinearLayout>

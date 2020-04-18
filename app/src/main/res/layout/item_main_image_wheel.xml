@@ -7,7 +7,7 @@
     android:clipToPadding="false">
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="176dp">
+        android:layout_height="156dp">
         <LinearLayout
             android:id="@+id/user_head_container"
             android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             <com.nd.abs.widget.ImageCycleView
                 android:id="@+id/ad_view"
                 android:layout_width="match_parent"
-                android:layout_height="176dp"
+                android:layout_height="156dp"
                 android:scaleType="centerCrop"
                 android:tag="overScroll"/>
         </LinearLayout>

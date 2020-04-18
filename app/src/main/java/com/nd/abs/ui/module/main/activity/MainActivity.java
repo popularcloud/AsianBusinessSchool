@@ -10,10 +10,12 @@ import android.widget.RelativeLayout;
 
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.FragmentsPagerAdapter;
+import com.nd.abs.ui.module.main.frament.LearnPlanFragment;
 import com.nd.abs.ui.module.main.frament.MainFragment;
 import com.nd.abs.ui.module.main.frament.MineFragment;
 import com.nd.abs.ui.module.main.frament.NewMainFragment;
 import com.nd.abs.ui.module.main.frament.OnLineMBAFragment;
+import com.nd.abs.ui.module.main.frament.ThePlanFragment;
 import com.nd.abs.widget.CustomViewPager;
 
 import java.util.HashMap;
@@ -110,7 +112,7 @@ public class MainActivity extends BaseFragmentActivity {
         fragmentHashMap.put(0, new NewMainFragment());
         fragmentHashMap.put(1, new OnLineMBAFragment());
         fragmentHashMap.put(2, new OnLineMBAFragment());
-        fragmentHashMap.put(3, new MainFragment());
+        fragmentHashMap.put(3, new ThePlanFragment());
         fragmentHashMap.put(4,new MineFragment());
     }
 
