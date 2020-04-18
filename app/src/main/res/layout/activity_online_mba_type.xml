@@ -2,15 +2,23 @@
     android:id="@+id/my_content_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:background="@color/f0_gray_line">
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_left_rv"
-        android:layout_width="100dp"
-        android:layout_height="match_parent"/>
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/main_right_rv"
-        android:background="#FFF"
+    <include layout="@layout/include_title" />
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_left_menu"
+            android:layout_width="90dp"
+            android:layout_height="match_parent"
+            android:background="@color/f0_gray_line"/>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_right_goods"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"/>
+        </LinearLayout>
 </LinearLayout>

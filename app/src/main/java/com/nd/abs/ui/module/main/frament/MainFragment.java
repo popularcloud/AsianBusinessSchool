@@ -16,6 +16,7 @@ public class MainFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_main, null);
+        txtActionbarTitle = view.findViewById(R.id.txtActionbarTitle);
         ButterKnife.bind(this, view);
         return view;
     }
@@ -37,6 +38,7 @@ public class MainFragment extends BaseFragment {
 
     @Override
     public void init() {
+        txtActionbarTitle.setText("首页");
     }
 
 

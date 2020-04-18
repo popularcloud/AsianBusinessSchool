@@ -11,6 +11,7 @@ import android.widget.RelativeLayout;
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.FragmentsPagerAdapter;
 import com.nd.abs.ui.module.main.frament.MainFragment;
+import com.nd.abs.ui.module.main.frament.MineFragment;
 import com.nd.abs.ui.module.main.frament.NewMainFragment;
 import com.nd.abs.ui.module.main.frament.OnLineMBAFragment;
 import com.nd.abs.widget.CustomViewPager;
@@ -22,11 +23,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
- * 程序入口,主页
  *
- * @author 何栋
- * @date 2017年11月20日
- * @Copyright: lwc
  */
 public class MainActivity extends BaseFragmentActivity {
 
@@ -34,6 +31,8 @@ public class MainActivity extends BaseFragmentActivity {
     CustomViewPager cViewPager;
     @BindView(R.id.radio_home)
     RadioButton radioHome;
+    @BindView(R.id.radio_mba)
+    RadioButton radioMBA;
     @BindView(R.id.radio_order)
     RadioButton radioOrder;
     @BindView(R.id.radio_news)
@@ -97,9 +96,10 @@ public class MainActivity extends BaseFragmentActivity {
     private void addRadioButtonIdInList() {
         rButtonHashMap = new HashMap<>();
         rButtonHashMap.put(0, radioHome);
-        rButtonHashMap.put(1, radioNews);
-        rButtonHashMap.put(2, radioOrder);
-        rButtonHashMap.put(3, radioMine);
+        rButtonHashMap.put(1, radioMBA);
+        rButtonHashMap.put(2, radioNews);
+        rButtonHashMap.put(3, radioOrder);
+        rButtonHashMap.put(4, radioMine);
     }
 
     /**
@@ -109,14 +109,15 @@ public class MainActivity extends BaseFragmentActivity {
         fragmentHashMap = new HashMap<>();
         fragmentHashMap.put(0, new NewMainFragment());
         fragmentHashMap.put(1, new OnLineMBAFragment());
-        fragmentHashMap.put(2, new MainFragment());
-        fragmentHashMap.put(3,new MainFragment());
+        fragmentHashMap.put(2, new OnLineMBAFragment());
+        fragmentHashMap.put(3, new MainFragment());
+        fragmentHashMap.put(4,new MineFragment());
     }
 
     private void bindViewPage(HashMap<Integer, Fragment> fragmentList) {
         //是否滑动
         cViewPager.setPagingEnabled(false);
-        cViewPager.setOffscreenPageLimit(4);//最多缓存4个页面
+        cViewPager.setOffscreenPageLimit(5);//最多缓存4个页面
         cViewPager.setAdapter(new FragmentsPagerAdapter(getSupportFragmentManager(), fragmentList));
         cViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -136,20 +137,23 @@ public class MainActivity extends BaseFragmentActivity {
 
 
 
-    @OnClick({R.id.radio_home, R.id.radio_order, R.id.radio_news, R.id.radio_mine})
+    @OnClick({R.id.radio_home, R.id.radio_order, R.id.radio_news, R.id.radio_mine,R.id.radio_mba})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.radio_home:
                 cViewPager.setCurrentItem(0, false);
                 break;
-            case R.id.radio_news:
+            case R.id.radio_mba:
                 cViewPager.setCurrentItem(1, false);
                 break;
-            case R.id.radio_order:
+            case R.id.radio_news:
                 cViewPager.setCurrentItem(2, false);
                 break;
-            case R.id.radio_mine:
+            case R.id.radio_order:
                 cViewPager.setCurrentItem(3, false);
+                break;
+            case R.id.radio_mine:
+                cViewPager.setCurrentItem(4, false);
                 break;
         }
     }

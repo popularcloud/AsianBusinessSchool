@@ -1,25 +1,25 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml:1:1-54
-INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml:1:1-54
-INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml:1:1-54
+ADDED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml:1:1-54
+INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml:1:1-54
+INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml:1:1-54
 	package
-		ADDED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml:1:11-52
-		INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
-		INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
+		ADDED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml:1:11-52
+		INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
+		INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml:1:1-54
+		ADDED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml:1:1-54
 uses-sdk
-INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
-INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
-INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
-INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
+INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
+INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
+INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
+INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
-		ADDED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
-		INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
+		INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
+		ADDED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
+		INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
-		ADDED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
-		INJECTED from G:\gitworkspace\AsianBusinessSchool\refreshlayout\src\main\AndroidManifest.xml
+		INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
+		ADDED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml
+		INJECTED from /Users/apple/Desktop/gitworkspace/AsianBusinessSchool/refreshlayout/src/main/AndroidManifest.xml

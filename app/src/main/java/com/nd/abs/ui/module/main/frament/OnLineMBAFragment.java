@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.bean.SearchKeyWordBean;
+import com.nd.abs.ui.module.online_mba.activity.OnlienMBATypeActivity;
+import com.nd.abs.utils.IntentUtil;
 import com.nd.abs.widget.TagsLayout;
 
 import java.util.ArrayList;
@@ -30,6 +32,7 @@ public class OnLineMBAFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_online_mba, null);
+        txtActionbarTitle = view.findViewById(R.id.txtActionbarTitle);
         ButterKnife.bind(this, view);
         return view;
     }
@@ -52,6 +55,7 @@ public class OnLineMBAFragment extends BaseFragment {
     @Override
     public void init() {
 
+        txtActionbarTitle.setText("线上MBA");
         tl_tags.setVisibility(View.VISIBLE);
         tl_tags.removeAllViews();
 
@@ -72,6 +76,8 @@ public class OnLineMBAFragment extends BaseFragment {
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    IntentUtil.gotoActivity(getContext(), OnlienMBATypeActivity.class);
                 }
             });
             tl_tags.addView(textView);

@@ -30,16 +30,20 @@
                 android:text="首页" />
 
             <RadioButton
+                android:id="@+id/radio_mba"
+                style="@style/main_menu_radiobutton_style"
+                android:drawableTop="@drawable/tab_main_selector"
+                android:text="线上MBA" />
+            <RadioButton
                 android:id="@+id/radio_news"
                 style="@style/main_menu_radiobutton_style"
                 android:drawableTop="@drawable/tab_main_selector"
-                android:text="资讯" />
-
+                android:text="动态" />
             <RadioButton
                 android:id="@+id/radio_order"
                 style="@style/main_menu_radiobutton_style"
                 android:drawableTop="@drawable/tab_main_selector"
-                android:text="订单" />
+                android:text="学习计划" />
 
             <RadioButton
                 android:id="@+id/radio_mine"
