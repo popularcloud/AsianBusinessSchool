@@ -36,6 +36,5 @@ dependencies {
     // implementation 'com.github.bumptech.glide:glide:3.7.0'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation project(path: ':refreshlayout')
-
     implementation 'org.byteam.superadapter:superadapter:3.6.6'
 }
