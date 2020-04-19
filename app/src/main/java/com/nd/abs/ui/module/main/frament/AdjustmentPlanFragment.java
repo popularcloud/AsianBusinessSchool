@@ -9,12 +9,14 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.nd.abs.R;
+import com.nd.abs.ui.module.main.adpter.AdjustPlanAdapter;
 import com.nd.abs.ui.module.main.adpter.LearnPlanAdapter;
 import com.nd.abs.ui.module.main.bean.LearnPlanBean;
 import com.nd.abs.utils.BGARefreshLayoutUtils;
 
 import org.byteam.superadapter.OnItemClickListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -25,17 +27,20 @@ public class AdjustmentPlanFragment extends BaseFragment{
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
+    @BindView(R.id.rv_plan_class)
+    RecyclerView rv_plan_class;
     @BindView(R.id.mBGARefreshLayout)
     BGARefreshLayout mBGARefreshLayout;
-    private LearnPlanAdapter adapter;
-    private List<LearnPlanBean> learnPlanBeans;
+    private AdjustPlanAdapter adapter;
+    private AdjustPlanAdapter adapter02;
+    private List<LearnPlanBean> learnPlanBeans = new ArrayList<>();
     //加载的page页
     private int page = 1;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_learn_plan, null);
+        View view = inflater.inflate(R.layout.fragment_adjust_plan, null);
         ButterKnife.bind(this, view);
         BGARefreshLayoutUtils.initRefreshLayout(getContext(), mBGARefreshLayout);
         return view;
@@ -49,18 +54,19 @@ public class AdjustmentPlanFragment extends BaseFragment{
         init();
         setListener();
         bindRecycleView();
+        mBGARefreshLayout.beginRefreshing();  //请求网络数据
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        mBGARefreshLayout.beginRefreshing();  //请求网络数据
+
     }
 
     private void bindRecycleView() {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new LearnPlanAdapter(getContext(), learnPlanBeans, R.layout.item_learn_plan);
+        adapter = new AdjustPlanAdapter(getContext(), learnPlanBeans, R.layout.item_adjust_plan,1);
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int viewType, int position) {
@@ -68,6 +74,16 @@ public class AdjustmentPlanFragment extends BaseFragment{
             }
         });
         recyclerView.setAdapter(adapter);
+
+        rv_plan_class.setLayoutManager(new LinearLayoutManager(getContext()));
+        adapter02 = new AdjustPlanAdapter(getContext(), learnPlanBeans, R.layout.item_adjust_plan,0);
+        adapter02.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int viewType, int position) {
+
+            }
+        });
+        rv_plan_class.setAdapter(adapter02);
     }
 
 
@@ -98,6 +114,16 @@ public class AdjustmentPlanFragment extends BaseFragment{
             public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
                 page = 1;
                // presenter.getOrders(1, 1);
+
+                learnPlanBeans.add(new LearnPlanBean());
+                learnPlanBeans.add(new LearnPlanBean());
+                learnPlanBeans.add(new LearnPlanBean());
+
+                adapter.notifyDataSetChanged();
+
+                adapter02.notifyDataSetChanged();
+
+                mBGARefreshLayout.endRefreshing();
             }
 
             @Override

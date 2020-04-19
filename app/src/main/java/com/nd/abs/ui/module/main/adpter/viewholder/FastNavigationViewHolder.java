@@ -2,10 +2,13 @@ package com.nd.abs.ui.module.main.adpter.viewholder;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.nd.abs.R;
+import com.nd.abs.ui.module.main.activity.UnderTheLineActivity;
+import com.nd.abs.utils.IntentUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -16,6 +19,7 @@ public class FastNavigationViewHolder extends BaseViewHolder{
     //对话框
     private Dialog dialog;
 
+    private Context context;
     //轮播通知
     @BindView(R.id.ll_gb)
     LinearLayout ll_gb;
@@ -31,12 +35,16 @@ public class FastNavigationViewHolder extends BaseViewHolder{
 
     @Override
     public void bindViewHolder(Object data, Context context) {
+
+        this.context = context;
     }
 
     @OnClick({R.id.ll_repairs,R.id.ll_meal,R.id.ll_integral,R.id.ll_lease})
     public void onBtnClick(View view){
         switch (view.getId()){
             case R.id.ll_repairs:
+
+                IntentUtil.gotoActivity(context, UnderTheLineActivity.class);
                 break;
             case R.id.ll_meal:
 

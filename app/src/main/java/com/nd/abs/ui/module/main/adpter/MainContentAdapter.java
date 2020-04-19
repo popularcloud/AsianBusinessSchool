@@ -41,15 +41,17 @@ public class MainContentAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View presentView;
-        RecyclerView.ViewHolder presentViewHolder = null;
+        BaseViewHolder presentViewHolder = null;
         switch (viewType){
             case 0:
              presentView = LayoutInflater.from(mContext).inflate(R.layout.item_main_image_wheel,parent,false);
              presentViewHolder = new ImageWheelViewHolder(presentView);
+            // presentViewHolder.bindViewHolder(null,mContext);
             break;
             case 1:
                 presentView = LayoutInflater.from(mContext).inflate(R.layout.item_main_fast_navigation,parent,false);
                 presentViewHolder = new FastNavigationViewHolder(presentView);
+                presentViewHolder.bindViewHolder(null,mContext);
                 break;
             case 2:
                 presentView = LayoutInflater.from(mContext).inflate(R.layout.item_main_dried_good,parent,false);

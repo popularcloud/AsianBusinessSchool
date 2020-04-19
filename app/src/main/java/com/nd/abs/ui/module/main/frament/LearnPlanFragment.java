@@ -15,19 +15,14 @@ import com.nd.abs.utils.BGARefreshLayoutUtils;
 
 import org.byteam.superadapter.OnItemClickListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
-/**
- * @author 何栋
- * @version 1.0
- * @date 2017/3/9 18:01
- * @email 294663966@qq.com
- * 进行中
- */
+
 public class LearnPlanFragment extends BaseFragment{
 
     @BindView(R.id.recyclerView)
@@ -35,7 +30,7 @@ public class LearnPlanFragment extends BaseFragment{
     @BindView(R.id.mBGARefreshLayout)
     BGARefreshLayout mBGARefreshLayout;
     private LearnPlanAdapter adapter;
-    private List<LearnPlanBean> learnPlanBeans;
+    private List<LearnPlanBean> learnPlanBeans = new ArrayList<>();
     //加载的page页
     private int page = 1;
 
@@ -56,12 +51,13 @@ public class LearnPlanFragment extends BaseFragment{
         init();
         setListener();
         bindRecycleView();
+        mBGARefreshLayout.beginRefreshing();  //请求网络数据
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        mBGARefreshLayout.beginRefreshing();  //请求网络数据
+
     }
 
     private void bindRecycleView() {
@@ -105,6 +101,14 @@ public class LearnPlanFragment extends BaseFragment{
             public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
                 page = 1;
                // presenter.getOrders(1, 1);
+
+                learnPlanBeans.add(new LearnPlanBean());
+                learnPlanBeans.add(new LearnPlanBean());
+                learnPlanBeans.add(new LearnPlanBean());
+
+                adapter.notifyDataSetChanged();
+
+                mBGARefreshLayout.endRefreshing();
             }
 
             @Override
