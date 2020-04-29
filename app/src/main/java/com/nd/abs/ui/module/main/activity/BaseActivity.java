@@ -1,7 +1,14 @@
 package com.nd.abs.ui.module.main.activity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.nd.abs.R;
+import com.nd.abs.widget.MyTextView;
 
 import butterknife.ButterKnife;
 
@@ -12,6 +19,9 @@ import butterknife.ButterKnife;
 public abstract class BaseActivity extends FragmentActivity {
 
 	public Bundle savedInstanceState;
+	protected MyTextView txtActionbarTitle;
+	private TextView tvqd;
+	private ImageView imgRight;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +31,13 @@ public abstract class BaseActivity extends FragmentActivity {
 
 		setContentView(layoutId);
 		ButterKnife.bind(this);
+
+		try {
+			txtActionbarTitle = (MyTextView) findViewById(R.id.txtActionbarTitle);
+			tvqd = (TextView) findViewById(R.id.tvQd);
+			imgRight = (ImageView) findViewById(R.id.imgRight);
+		} catch (Exception e){}
+
 		/**
 		 * 初始化
 		 */
@@ -36,6 +53,47 @@ public abstract class BaseActivity extends FragmentActivity {
 		 */
 		initGetData();
 
+	}
+
+	protected void setTitle(String title) {
+		if (txtActionbarTitle != null && title != null) {
+			txtActionbarTitle.setText(title);
+		}
+	}
+
+	protected void setTitle(String title,int textColor) {
+		if (txtActionbarTitle != null && title != null) {
+			txtActionbarTitle.setText(title);
+			txtActionbarTitle.setTextColor(textColor);
+		}
+	}
+
+	protected void setRight(String right, View.OnClickListener listener) {
+		if (tvqd != null && right != null) {
+			tvqd.setVisibility(View.VISIBLE);
+			tvqd.setText(right);
+			tvqd.setOnClickListener(listener);
+		}
+	}
+	protected void setRight(String right,String color ,View.OnClickListener listener) {
+		if (tvqd != null && right != null) {
+			tvqd.setVisibility(View.VISIBLE);
+			tvqd.setText(right);
+			tvqd.setTextColor(Color.parseColor(color));
+			tvqd.setOnClickListener(listener);
+		}
+	}
+	protected void setRight(String right) {
+		if (tvqd != null && right != null) {
+			tvqd.setText(right);
+		}
+	}
+	protected void setRight(int right, View.OnClickListener listener) {
+		if (imgRight != null && right != 0) {
+			imgRight.setVisibility(View.VISIBLE);
+			imgRight.setImageResource(right);
+			imgRight.setOnClickListener(listener);
+		}
 	}
 
 	/**

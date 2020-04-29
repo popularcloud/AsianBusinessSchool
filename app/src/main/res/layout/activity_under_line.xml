@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.nd.abs.widget.DisInterceptNestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/white"
-    android:clipChildren="false"
-    android:clipToPadding="false">
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -142,5 +143,40 @@
                 android:drawableRight="@mipmap/ic_blue_right_arrow"
                 android:textSize="14sp" />
         </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_data"
+            android:layout_width="match_parent"
+            android:paddingTop="15dp"
+            android:paddingLeft="15dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
     </LinearLayout>
-</com.nd.abs.widget.DisInterceptNestedScrollView>
+    </ScrollView>
+    <include layout="@layout/include_title"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:padding="15dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/gray_99"
+            android:layout_marginRight="30dp"
+            android:text="招生顾问"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/btn_blue_fill"
+            android:text="报名"/>
+    </LinearLayout>
+</RelativeLayout>
