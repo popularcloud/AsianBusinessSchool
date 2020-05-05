@@ -10,6 +10,7 @@ import android.widget.RelativeLayout;
 
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.FragmentsPagerAdapter;
+import com.nd.abs.ui.module.main.frament.DynamicFragment;
 import com.nd.abs.ui.module.main.frament.LearnPlanFragment;
 import com.nd.abs.ui.module.main.frament.MainFragment;
 import com.nd.abs.ui.module.main.frament.MineFragment;
@@ -111,7 +112,7 @@ public class MainActivity extends BaseFragmentActivity {
         fragmentHashMap = new HashMap<>();
         fragmentHashMap.put(0, new NewMainFragment());
         fragmentHashMap.put(1, new OnLineMBAFragment());
-        fragmentHashMap.put(2, new OnLineMBAFragment());
+        fragmentHashMap.put(2, new DynamicFragment());
         fragmentHashMap.put(3, new ThePlanFragment());
         fragmentHashMap.put(4,new MineFragment());
     }

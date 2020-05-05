@@ -1,11 +1,8 @@
 package com.nd.abs.ui.module.main.adpter.viewholder;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.activity.MainActivity;
@@ -43,7 +40,7 @@ public class ImageWheelViewHolder extends BaseViewHolder{
 
         @Override
         public void displayImage(final String imageURL, final ImageView imageView) {
-            ImageLoaderUtil.getInstance().displayFromNetD(MainActivity.activity, imageURL, imageView);// 使用ImageLoader对图片进行加装！
+            ImageLoaderUtil.getInstance().displayFromNetD(MainActivity.activity, imageURL, imageView,R.mipmap.image_default_picture);// 使用ImageLoader对图片进行加装！
         }
     };
 }

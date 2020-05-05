@@ -35,7 +35,6 @@ public class FastNavigationViewHolder extends BaseViewHolder{
 
     @Override
     public void bindViewHolder(Object data, Context context) {
-
         this.context = context;
     }
 

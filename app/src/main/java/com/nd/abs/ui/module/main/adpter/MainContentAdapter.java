@@ -13,6 +13,7 @@ import com.nd.abs.ui.module.main.adpter.viewholder.FastNavigationViewHolder;
 import com.nd.abs.ui.module.main.adpter.viewholder.ImageWheelViewHolder;
 import com.nd.abs.ui.module.main.bean.ADInfo;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainContentAdapter extends RecyclerView.Adapter {
@@ -23,6 +24,10 @@ public class MainContentAdapter extends RecyclerView.Adapter {
 
     public MainContentAdapter(Context context) {
         mContext = context;
+
+        adInfos = new ArrayList<>();
+        adInfos.add(new ADInfo());
+        adInfos.add(new ADInfo());
     }
 
     @Override
@@ -46,7 +51,7 @@ public class MainContentAdapter extends RecyclerView.Adapter {
             case 0:
              presentView = LayoutInflater.from(mContext).inflate(R.layout.item_main_image_wheel,parent,false);
              presentViewHolder = new ImageWheelViewHolder(presentView);
-            // presentViewHolder.bindViewHolder(null,mContext);
+             presentViewHolder.bindViewHolder(adInfos,mContext);
             break;
             case 1:
                 presentView = LayoutInflater.from(mContext).inflate(R.layout.item_main_fast_navigation,parent,false);

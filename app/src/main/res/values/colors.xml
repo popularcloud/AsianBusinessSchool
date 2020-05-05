@@ -12,10 +12,12 @@
     <color name="gray_99">#ff999999</color>
     <!-- 黑色66 -->
     <color name="black_66">#666666</color>
+    <color name="black_33">#333333</color>
     <color name="black">#000000</color>
     <color name="btn_blue_nomal">#1481ff</color>
     <!-- 灰色f5 -->
     <color name="gray_f5">#f5f5f5</color>
 
     <color name="red_money">#ff3a3a</color>
+    <color name="red_fc">#fc0a00</color>
 </resources>
