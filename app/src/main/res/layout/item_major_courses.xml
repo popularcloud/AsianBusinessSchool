@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:gravity="center_vertical"
+    android:background="@color/white"
+    android:orientation="vertical" >
+    <ImageView
+        android:id="@+id/iv_display"
+        android:layout_width="match_parent"
+        android:layout_height="211dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/image_default_picture"/>
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:layout_marginTop="15dp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:textColor="@color/black_33"
+        android:text="营销管理" />
+    <TextView
+        android:id="@+id/tv_specs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black_66"
+        android:textSize="14sp"
+        android:layout_gravity="center_vertical"
+        android:text="经典原著与营销创新" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingLeft="50dp"
+                android:paddingRight="50dp">
+                <TextView
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:background="@drawable/btn_blue_fill"
+                    android:text="免费试听"/>
+                <TextView
+                    android:layout_width="88dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:gravity="center"
+                    android:background="@drawable/btn_red_fill"
+                    android:text="购买"/>
+            </RelativeLayout>
+</LinearLayout>

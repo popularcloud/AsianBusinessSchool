@@ -19,6 +19,8 @@
         <activity android:name=".ui.module.main.activity.MainActivity" android:launchMode="singleTask"/>
         <activity android:name=".ui.module.online_mba.activity.OnlienMBATypeActivity" />
         <activity android:name=".ui.module.main.activity.UnderTheLineActivity"></activity>
+        <activity android:name=".ui.module.main.activity.MajorCoursesActivity" />
+        <activity android:name=".ui.module.main.activity.LiveClassActivity" />
     </application>
 
 </manifest>

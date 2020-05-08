@@ -96,6 +96,10 @@ public abstract class BaseActivity extends FragmentActivity {
 		}
 	}
 
+	public void onBack(View view){
+		finish();
+	}
+
 	/**
 	 * 获取显示view的xml文件ID
 	 * 

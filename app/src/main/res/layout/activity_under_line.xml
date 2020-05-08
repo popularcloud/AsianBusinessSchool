@@ -30,7 +30,7 @@
             android:paddingBottom="10dp"
             android:orientation="horizontal">
             <LinearLayout
-                android:id="@+id/ll_repairs"
+                android:id="@+id/ll_major_courses"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -49,7 +49,7 @@
                     android:text="主修课" />
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/ll_meal"
+                android:id="@+id/ll_leader_training_camp"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -68,7 +68,7 @@
                     android:text="领袖训练营" />
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/ll_integral"
+                android:id="@+id/ll_president_training_course"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -87,7 +87,7 @@
                     android:text="总裁训练班" />
             </LinearLayout>
             <LinearLayout
-                android:id="@+id/ll_lease"
+                android:id="@+id/ll_private_council"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"

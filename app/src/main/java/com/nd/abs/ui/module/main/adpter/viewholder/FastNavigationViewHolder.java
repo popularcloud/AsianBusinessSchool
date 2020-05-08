@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 
 import com.nd.abs.R;
+import com.nd.abs.ui.module.main.activity.LiveClassActivity;
+import com.nd.abs.ui.module.main.activity.MajorCoursesActivity;
 import com.nd.abs.ui.module.main.activity.UnderTheLineActivity;
 import com.nd.abs.utils.IntentUtil;
 
@@ -49,7 +51,7 @@ public class FastNavigationViewHolder extends BaseViewHolder{
 
                 break;
             case R.id.ll_integral:
-
+                IntentUtil.gotoActivity(context, LiveClassActivity.class);
                 break;
             case R.id.ll_lease:
                 break;

@@ -48,7 +48,6 @@ public class NewMainFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_new_main, null);
-        txtActionbarTitle = view.findViewById(R.id.txtActionbarTitle);
         ButterKnife.bind(this, view);
         return view;
     }
@@ -71,7 +70,6 @@ public class NewMainFragment extends BaseFragment {
 
     @Override
     public void init() {
-        txtActionbarTitle.setText("首页");
         initRecycleView();
     }
 
@@ -89,6 +87,7 @@ public class NewMainFragment extends BaseFragment {
             @Override
             public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
                 getWheelPic();
+                mBGARefreshLayout.endRefreshing();
             }
 
             @Override
