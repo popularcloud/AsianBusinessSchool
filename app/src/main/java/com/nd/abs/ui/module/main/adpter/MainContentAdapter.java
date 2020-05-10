@@ -61,6 +61,7 @@ public class MainContentAdapter extends RecyclerView.Adapter {
             case 2:
                 presentView = LayoutInflater.from(mContext).inflate(R.layout.item_main_dried_good,parent,false);
                 presentViewHolder = new DriedGoodViewHolder(presentView);
+                presentViewHolder.bindViewHolder(null,mContext);
                 break;
         }
         return presentViewHolder;

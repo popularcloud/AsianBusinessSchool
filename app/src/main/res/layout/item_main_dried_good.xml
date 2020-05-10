@@ -272,8 +272,11 @@
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
                         android:textColor="@color/red_fc"
-                        android:layout_marginRight="47dp"
                         android:text="¥100"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="1px" />
                     <TextView
                         android:layout_width="68dp"
                         android:layout_height="28dp"
@@ -334,6 +337,10 @@
                         android:textColor="@color/red_fc"
                         android:layout_marginRight="47dp"
                         android:text="¥100"/>
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="1px" />
                     <TextView
                         android:layout_width="68dp"
                         android:layout_height="28dp"
@@ -391,7 +398,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@drawable/btn_transparent_gray_bian">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -455,7 +464,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="15dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:background="@drawable/btn_transparent_gray_bian">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -512,6 +523,108 @@
                     android:textSize="14sp"
                     android:text="报名参加"/>
             </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="8dp"
+        android:padding="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:focusableInTouchMode="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="36dp"
+                android:background="@color/white"
+                android:gravity="center_vertical|left"
+                android:drawableLeft="@mipmap/ic_blue_line"
+                android:drawablePadding="6dp"
+                android:textColor="@color/black_33"
+                android:text="导师风采"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="36dp"
+                android:paddingRight="15dp"
+                android:background="@color/white"
+                android:gravity="center_vertical|right"
+                android:paddingLeft="15dp"
+                android:text=""
+                android:visibility="gone"
+                android:drawablePadding="6dp"
+                android:textColor="@color/btn_blue_nomal"
+                android:drawableRight="@mipmap/list_icon_more"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginTop="8dp"
+        android:padding="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:focusableInTouchMode="true"
+            android:focusable="true">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="36dp"
+                android:background="@color/white"
+                android:gravity="center_vertical|left"
+                android:drawableLeft="@mipmap/ic_blue_line"
+                android:drawablePadding="6dp"
+                android:textColor="@color/black_33"
+                android:text="学员代表"
+                android:textSize="16sp" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="36dp"
+                android:paddingRight="15dp"
+                android:background="@color/white"
+                android:gravity="center_vertical|right"
+                android:paddingLeft="15dp"
+                android:text=""
+                android:visibility="gone"
+                android:drawablePadding="6dp"
+                android:textColor="@color/btn_blue_nomal"
+                android:drawableRight="@mipmap/list_icon_more"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:orientation="horizontal">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rv_student"
+                android:layout_width="match_parent"
+                android:layout_height="200dp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

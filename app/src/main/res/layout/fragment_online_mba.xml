@@ -45,7 +45,13 @@
             android:text="查看更多"
             android:drawablePadding="6dp"
             android:textColor="@color/btn_blue_nomal"
+            android:visibility="gone"
             android:drawableRight="@mipmap/ic_blue_right_arrow"
             android:textSize="14sp" />
     </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>

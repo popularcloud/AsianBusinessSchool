@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fitsSystemWindows="true">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/f0_gray_line"
     android:orientation="vertical">
     <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/btn_blue_d5">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:paddingRight="15dp"
+            android:src="@mipmap/nav_icon_set_w_n"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/btn_blue_nomal"
+        android:background="@color/btn_blue_d5"
         android:padding="15dp">
         <ImageView
             android:id="@+id/iv_header"
@@ -46,9 +62,15 @@
             android:layout_below="@+id/tv_learn_class"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="3dp"/>
-
-        <LinearLayout
+        <View
+            android:id="@+id/line_01"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
             android:layout_below="@+id/tv_learn_time"
+            android:layout_marginTop="30dp"
+            android:background="@color/white" />
+        <LinearLayout
+            android:layout_below="@+id/line_01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -61,6 +83,10 @@
                 android:gravity="center"
                 android:text="99  我关注的人"
                 android:textSize="15sp"/>
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -81,8 +107,8 @@
                 android:layout_width="match_parent"
                 android:layout_marginLeft="15dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textColor="@color/black_33"
+                android:textSize="16sp"
                 android:paddingTop="8dp"
                 android:text="购物"/>
         <LinearLayout
@@ -91,29 +117,30 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/tv_order"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/black_33"
                 android:textSize="12sp"
                 android:gravity="center"
-                android:drawableTop="@mipmap/newstyle_oder"
+                android:drawableTop="@mipmap/me_icon_order"
                 android:text="订单"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/black_33"
                 android:textSize="12sp"
                 android:gravity="center"
-                android:drawableTop="@mipmap/newstyle_oder"
+                android:drawableTop="@mipmap/me_icon_card"
                 android:text="卡劵"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/black_33"
                 android:textSize="12sp"
                 android:gravity="center"
                 android:visibility="invisible"
@@ -124,7 +151,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/black_33"
                 android:textSize="12sp"
                 android:gravity="center"
                 android:visibility="invisible"
@@ -143,8 +170,8 @@
             android:layout_width="match_parent"
             android:layout_marginLeft="15dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textColor="@color/black_33"
+            android:textSize="16sp"
             android:paddingTop="8dp"
             android:text="内容"/>
         <LinearLayout
@@ -156,36 +183,36 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/black_33"
                 android:textSize="12sp"
                 android:gravity="center"
-                android:drawableTop="@mipmap/newstyle_oder"
+                android:drawableTop="@mipmap/me_icon_audition"
                 android:text="试听记录"/>
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/black_33"
                 android:textSize="12sp"
                 android:gravity="center"
-                android:drawableTop="@mipmap/newstyle_oder"
+                android:drawableTop="@mipmap/me_icon_download"
                 android:text="下载"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/black_33"
                 android:textSize="12sp"
                 android:gravity="center"
-                android:drawableTop="@mipmap/newstyle_oder"
+                android:drawableTop="@mipmap/me_icon_collect"
                 android:text="收藏"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
+                android:textColor="@color/black_33"
                 android:textSize="12sp"
                 android:gravity="center"
                 android:visibility="invisible"
@@ -204,8 +231,8 @@
         android:layout_width="match_parent"
         android:layout_marginLeft="15dp"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="15sp"
+        android:textColor="@color/black_33"
+        android:textSize="16sp"
         android:paddingTop="8dp"
         android:text="成就"/>
     <LinearLayout
@@ -217,39 +244,39 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/black_33"
             android:textSize="12sp"
             android:gravity="center"
-            android:drawableTop="@mipmap/newstyle_oder"
+            android:drawableTop="@mipmap/me_icon_class"
             android:text="我的班级"/>
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/black_33"
             android:textSize="12sp"
             android:gravity="center"
-            android:drawableTop="@mipmap/newstyle_oder"
+            android:drawableTop="@mipmap/me_icon_mall"
             android:text="证书"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/black_33"
             android:textSize="12sp"
             android:gravity="center"
-            android:drawableTop="@mipmap/newstyle_oder"
+            android:drawableTop="@mipmap/me_icon_live"
             android:text="学分"/>
 
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textColor="@color/black"
+            android:textColor="@color/black_33"
             android:textSize="12sp"
             android:gravity="center"
-            android:drawableTop="@mipmap/newstyle_oder"
+            android:drawableTop="@mipmap/me_icon_activity"
             android:text="学生证"/>
     </LinearLayout>
 </LinearLayout>
@@ -268,8 +295,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textColor="@color/black_33"
                 android:drawablePadding="22dp"
                 android:text="推荐亚商app给好友"/>
             <ImageView
@@ -287,8 +314,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
-                android:textSize="15sp"
-                android:textColor="@color/black"
+                android:textSize="17sp"
+                android:textColor="@color/black_33"
                 android:drawablePadding="22dp"
                 android:text="我推荐的人"/>
             <ImageView
@@ -306,8 +333,8 @@
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:textColor="@color/black_33"
             android:drawablePadding="22dp"
             android:text="客服中心"/>
         <ImageView
@@ -318,3 +345,4 @@
     </LinearLayout>
     </LinearLayout>
 </LinearLayout>
+</ScrollView>

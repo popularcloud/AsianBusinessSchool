@@ -4,6 +4,9 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Dimension;
 import android.support.annotation.Nullable;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.nd.abs.R;
+import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
 import com.nd.abs.ui.module.main.bean.SearchKeyWordBean;
 import com.nd.abs.ui.module.online_mba.activity.OnlienMBATypeActivity;
 import com.nd.abs.utils.IntentUtil;
@@ -26,8 +30,12 @@ public class OnLineMBAFragment extends BaseFragment {
 
     @BindView(R.id.tl_tags)
     TagsLayout tl_tags;
+    @BindView(R.id.rv_data)
+    RecyclerView rv_data;
 
     List<SearchKeyWordBean> searchKeyWordBeenList;
+    private List<String> datas = new ArrayList<>();
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -82,8 +90,18 @@ public class OnLineMBAFragment extends BaseFragment {
             });
             tl_tags.addView(textView);
         }
+
+        initRecycleView();
     }
 
+    private void initRecycleView() {
+        datas.add("");
+        datas.add("");
+        datas.add("");
+        datas.add("");
+        rv_data.setLayoutManager(new LinearLayoutManager(getContext()));
+        rv_data.setAdapter(new RecentCoursesAdapter(getContext(),datas,R.layout.item_new_course));
+    }
 
 
     @Override

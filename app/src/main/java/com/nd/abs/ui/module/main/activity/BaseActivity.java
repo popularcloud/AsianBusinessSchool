@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
 import com.nd.abs.widget.MyTextView;
 
@@ -53,6 +54,15 @@ public abstract class BaseActivity extends FragmentActivity {
 		 */
 		initGetData();
 
+		initStatus();
+
+	}
+
+	public void initStatus() {
+		ImmersionBar.with(this)
+				.statusBarColor(R.color.white)
+				.statusBarDarkFont(true)
+				.navigationBarColor(R.color.white).init();
 	}
 
 	protected void setTitle(String title) {

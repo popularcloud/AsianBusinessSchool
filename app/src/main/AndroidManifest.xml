@@ -21,6 +21,7 @@
         <activity android:name=".ui.module.main.activity.UnderTheLineActivity"></activity>
         <activity android:name=".ui.module.main.activity.MajorCoursesActivity" />
         <activity android:name=".ui.module.main.activity.LiveClassActivity" />
+        <activity android:name=".ui.module.main.activity.PersonalMessageActivity" />
     </application>
 
 </manifest>
