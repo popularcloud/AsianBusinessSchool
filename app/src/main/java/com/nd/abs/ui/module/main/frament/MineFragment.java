@@ -7,7 +7,11 @@ import android.view.ViewGroup;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
+import com.nd.abs.ui.module.main.activity.FollowActivity;
+import com.nd.abs.ui.module.main.activity.MyCardCertificateActivity;
+import com.nd.abs.ui.module.main.activity.OrderActivity;
 import com.nd.abs.ui.module.main.activity.PersonalMessageActivity;
+import com.nd.abs.ui.module.main.activity.SettingActivity;
 import com.nd.abs.utils.IntentUtil;
 
 import butterknife.ButterKnife;
@@ -60,11 +64,26 @@ public class MineFragment extends BaseFragment{
 
     }
 
-    @OnClick({R.id.iv_header})
+    @OnClick({R.id.iv_header,R.id.iv_setting,R.id.tv_me_follow,R.id.tv_follow_me,R.id.tv_order,R.id.tv_cardCertificate})
     public void onBtnClick(View view){
         switch (view.getId()){
             case R.id.iv_header:
                 IntentUtil.gotoActivity(getActivity(), PersonalMessageActivity.class);
+            break;
+            case R.id.iv_setting:
+                IntentUtil.gotoActivity(getActivity(), SettingActivity.class);
+            break;
+            case R.id.tv_me_follow:
+                IntentUtil.gotoActivity(getActivity(), FollowActivity.class);
+            break;
+            case R.id.tv_follow_me:
+                IntentUtil.gotoActivity(getActivity(), FollowActivity.class);
+            break;
+            case R.id.tv_order:
+                IntentUtil.gotoActivity(getActivity(), OrderActivity.class);
+            break;
+            case R.id.tv_cardCertificate:
+                IntentUtil.gotoActivity(getActivity(), MyCardCertificateActivity.class);
             break;
         }
     }

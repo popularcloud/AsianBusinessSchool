@@ -22,6 +22,10 @@
         <activity android:name=".ui.module.main.activity.MajorCoursesActivity" />
         <activity android:name=".ui.module.main.activity.LiveClassActivity" />
         <activity android:name=".ui.module.main.activity.PersonalMessageActivity" />
+        <activity android:name=".ui.module.main.activity.SettingActivity" />
+        <activity android:name=".ui.module.main.activity.FollowActivity" />
+        <activity android:name=".ui.module.main.activity.OrderActivity" />
+        <activity android:name=".ui.module.main.activity.MyCardCertificateActivity" />
     </application>
 
 </manifest>

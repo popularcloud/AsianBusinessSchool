@@ -4,16 +4,16 @@ import android.os.Bundle;
 
 import com.nd.abs.R;
 
-public class PersonalMessageActivity extends BaseActivity{
-
+public class SettingActivity extends BaseActivity{
     @Override
     protected int getContentViewId(Bundle savedInstanceState) {
-        return R.layout.activity_personal_message;
+        return R.layout.activity_setting;
     }
 
     @Override
     protected void init() {
-        setTitle("个人信息");
+
+        setTitle("设置");
     }
 
     @Override

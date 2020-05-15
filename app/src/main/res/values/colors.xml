@@ -21,4 +21,6 @@
 
     <color name="red_money">#ff3a3a</color>
     <color name="red_fc">#fc0a00</color>
+    <color name="red_d4">#D42E2C</color>
+    <color name="yellow_ff">#FF9811</color>
 </resources>
