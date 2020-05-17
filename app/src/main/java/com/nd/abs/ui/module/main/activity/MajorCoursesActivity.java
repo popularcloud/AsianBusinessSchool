@@ -1,12 +1,15 @@
 package com.nd.abs.ui.module.main.activity;
 
 import android.os.Bundle;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
+import com.nd.abs.utils.IntentUtil;
+
+import org.byteam.superadapter.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +44,15 @@ public class MajorCoursesActivity extends BaseActivity{
         datas.add("");
         datas.add("");
         rv_main_content.setLayoutManager(new LinearLayoutManager(this));
-        rv_main_content.setAdapter(new RecentCoursesAdapter(this,datas,R.layout.item_major_courses));
+        RecentCoursesAdapter recentCoursesAdapter = new RecentCoursesAdapter(this,datas,R.layout.item_major_courses);
+        rv_main_content.setAdapter(recentCoursesAdapter);
+
+        recentCoursesAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int viewType, int position) {
+                IntentUtil.gotoActivity(MajorCoursesActivity.this,CoursesDetailActivity.class);
+            }
+        });
     }
 
     @Override

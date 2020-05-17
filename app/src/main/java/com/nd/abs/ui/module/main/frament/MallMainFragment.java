@@ -8,11 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
+import com.nd.abs.ui.module.main.activity.MallDetailActivity;
 import com.nd.abs.ui.module.main.adpter.LearnPlanAdapter;
 import com.nd.abs.ui.module.main.bean.LearnPlanBean;
 import com.nd.abs.utils.BGARefreshLayoutUtils;
+import com.nd.abs.utils.IntentUtil;
 
 import org.byteam.superadapter.OnItemClickListener;
 
@@ -24,7 +25,7 @@ import butterknife.ButterKnife;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
 
-public class LearnPlanFragment extends BaseFragment{
+public class MallMainFragment extends BaseFragment{
 
     @BindView(R.id.recyclerView)
     RecyclerView recyclerView;
@@ -38,7 +39,7 @@ public class LearnPlanFragment extends BaseFragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_learn_plan, null);
+        View view = inflater.inflate(R.layout.fragment_dynamic_main, null);
         ButterKnife.bind(this, view);
         BGARefreshLayoutUtils.initRefreshLayout(getContext(), mBGARefreshLayout);
         return view;
@@ -64,11 +65,11 @@ public class LearnPlanFragment extends BaseFragment{
     private void bindRecycleView() {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        adapter = new LearnPlanAdapter(getContext(), learnPlanBeans, R.layout.item_learn_plan);
+        adapter = new LearnPlanAdapter(getContext(), learnPlanBeans, R.layout.item_mall_main);
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(View itemView, int viewType, int position) {
-
+                IntentUtil.gotoActivity(getActivity(), MallDetailActivity.class);
             }
         });
         recyclerView.setAdapter(adapter);
@@ -78,17 +79,6 @@ public class LearnPlanFragment extends BaseFragment{
     @Override
     protected void lazyLoad() {
 
-    }
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        super.setUserVisibleHint(isVisibleToUser);
-        if(isVisibleToUser && getActivity() != null){
-            ImmersionBar.with(getActivity())
-                    .statusBarColor(R.color.btn_blue_d5)
-                    .statusBarDarkFont(true)
-                    .navigationBarColor(R.color.white).init();
-        }
     }
 
     @Override

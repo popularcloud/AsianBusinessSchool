@@ -2,13 +2,13 @@ package com.nd.abs.ui.module.main.adpter.viewholder;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.view.ContextThemeWrapper;
 import android.view.View;
 import android.widget.LinearLayout;
 
 import com.nd.abs.R;
+import com.nd.abs.ui.module.main.activity.EntertainmentActivity;
 import com.nd.abs.ui.module.main.activity.LiveClassActivity;
-import com.nd.abs.ui.module.main.activity.MajorCoursesActivity;
+import com.nd.abs.ui.module.main.activity.MallActivity;
 import com.nd.abs.ui.module.main.activity.UnderTheLineActivity;
 import com.nd.abs.utils.IntentUtil;
 
@@ -48,12 +48,13 @@ public class FastNavigationViewHolder extends BaseViewHolder{
                 IntentUtil.gotoActivity(context, UnderTheLineActivity.class);
                 break;
             case R.id.ll_meal:
-
+                IntentUtil.gotoActivity(context, MallActivity.class);
                 break;
             case R.id.ll_integral:
                 IntentUtil.gotoActivity(context, LiveClassActivity.class);
                 break;
             case R.id.ll_lease:
+                IntentUtil.gotoActivity(context, EntertainmentActivity.class);
                 break;
 
         }

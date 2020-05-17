@@ -2,7 +2,8 @@
     android:id="@+id/my_content_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/f0_gray_line">
+    android:background="@color/f0_gray_line"
+    android:fitsSystemWindows="true">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -32,23 +33,23 @@
             <RadioButton
                 android:id="@+id/radio_mba"
                 style="@style/main_menu_radiobutton_style"
-                android:drawableTop="@drawable/tab_main_selector"
+                android:drawableTop="@drawable/tab_mba_selector"
                 android:text="线上MBA" />
             <RadioButton
                 android:id="@+id/radio_news"
                 style="@style/main_menu_radiobutton_style"
-                android:drawableTop="@drawable/tab_main_selector"
+                android:drawableTop="@drawable/tab_dyn_selector"
                 android:text="动态" />
             <RadioButton
                 android:id="@+id/radio_order"
                 style="@style/main_menu_radiobutton_style"
-                android:drawableTop="@drawable/tab_main_selector"
+                android:drawableTop="@drawable/tab_plan_selector"
                 android:text="学习计划" />
 
             <RadioButton
                 android:id="@+id/radio_mine"
                 style="@style/main_menu_radiobutton_style"
-                android:drawableTop="@drawable/tab_main_selector"
+                android:drawableTop="@drawable/tab_me_selector"
                 android:text="我的" />
         </RadioGroup>
     </LinearLayout>

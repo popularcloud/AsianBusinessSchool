@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true">
     <cn.bingoogolapple.refreshlayout.BGARefreshLayout
         android:id="@+id/mBGARefreshLayout"
         android:layout_width="match_parent"

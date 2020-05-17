@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.FragmentsPagerAdapter;
 import com.nd.abs.widget.CustomViewPager;
@@ -52,6 +53,16 @@ public class DynamicFragment extends BaseFragment {
 
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if(isVisibleToUser && getActivity() != null){
+            ImmersionBar.with(getActivity())
+                    .statusBarColor(R.color.white)
+                    .statusBarDarkFont(true)
+                    .navigationBarColor(R.color.white).init();
+        }
+    }
 
     @Override
     public void init() {

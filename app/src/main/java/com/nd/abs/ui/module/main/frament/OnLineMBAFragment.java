@@ -13,12 +13,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
+import com.nd.abs.ui.module.main.activity.SeeVideoActivity;
 import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
 import com.nd.abs.ui.module.main.bean.SearchKeyWordBean;
 import com.nd.abs.ui.module.online_mba.activity.OnlienMBATypeActivity;
 import com.nd.abs.utils.IntentUtil;
 import com.nd.abs.widget.TagsLayout;
+
+import org.byteam.superadapter.OnItemClickListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,6 +63,16 @@ public class OnLineMBAFragment extends BaseFragment {
         }
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if(isVisibleToUser && getActivity() != null){
+            ImmersionBar.with(getActivity())
+                    .statusBarColor(R.color.white)
+                    .statusBarDarkFont(true)
+                    .navigationBarColor(R.color.white).init();
+        }
+    }
 
     @Override
     public void init() {
@@ -100,7 +114,16 @@ public class OnLineMBAFragment extends BaseFragment {
         datas.add("");
         datas.add("");
         rv_data.setLayoutManager(new LinearLayoutManager(getContext()));
-        rv_data.setAdapter(new RecentCoursesAdapter(getContext(),datas,R.layout.item_new_course));
+
+        RecentCoursesAdapter recentCoursesAdapter = new RecentCoursesAdapter(getContext(),datas,R.layout.item_new_course);
+        rv_data.setAdapter(recentCoursesAdapter);
+
+        recentCoursesAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int viewType, int position) {
+                IntentUtil.gotoActivity(getActivity(), SeeVideoActivity.class);
+            }
+        });
     }
 
 

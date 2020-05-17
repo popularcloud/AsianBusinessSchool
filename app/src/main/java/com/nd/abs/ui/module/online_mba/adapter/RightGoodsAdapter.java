@@ -28,7 +28,7 @@ public class RightGoodsAdapter extends SuperAdapter<LeaseRightBean> {
 
 	@Override
 	public void onBind(SuperViewHolder holder, int viewType, int layoutPosition, LeaseRightBean item) {
-		TextView tv_name = holder.itemView.findViewById(R.id.tv_name);
-		tv_name.setText(item.getName());
+		//TextView tv_name = holder.itemView.findViewById(R.id.tv_name);
+		//tv_name.setText(item.getName());
 	}
 }

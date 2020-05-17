@@ -2,16 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:fitsSystemWindows="true">
-    <include layout="@layout/include_search_title" />
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <include layout="@layout/include_search_title"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:src="@mipmap/image_default_picture"
+        android:scaleType="fitXY"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:padding="15dp"
         android:orientation="horizontal">
         <TextView
-            android:id="@+id/tv_follow"
+            android:id="@+id/tv_new"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -19,9 +27,9 @@
             android:textColor="@color/black_33"
             android:gravity="right"
             android:layout_marginRight="20dp"
-            android:text="关注"/>
+            android:text="最新上架"/>
         <TextView
-            android:id="@+id/tv_recommend"
+            android:id="@+id/tv_entity"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -29,12 +37,18 @@
             android:textColor="@color/gray_99"
             android:gravity="left"
             android:layout_marginLeft="20dp"
-            android:text="推荐"/>
+            android:text="实体商品"/>
+        <TextView
+            android:id="@+id/tv_virtualization"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/gray_99"
+            android:gravity="left"
+            android:layout_marginLeft="20dp"
+            android:text="虚拟商品"/>
     </LinearLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/f0_gray_line"/>
     <com.nd.abs.widget.CustomViewPager
         android:id="@+id/cViewPager"
         android:layout_width="match_parent"

@@ -26,6 +26,12 @@
         <activity android:name=".ui.module.main.activity.FollowActivity" />
         <activity android:name=".ui.module.main.activity.OrderActivity" />
         <activity android:name=".ui.module.main.activity.MyCardCertificateActivity" />
+        <activity android:name=".ui.module.main.activity.SeeVideoActivity" />
+        <activity android:name=".ui.module.main.activity.ListenAudioActivity"></activity>
+        <activity android:name=".ui.module.main.activity.CoursesDetailActivity"></activity>
+        <activity android:name=".ui.module.main.activity.MallActivity"></activity>
+        <activity android:name=".ui.module.main.activity.MallDetailActivity"></activity>
+        <activity android:name=".ui.module.main.activity.EntertainmentActivity"></activity>
     </application>
 
 </manifest>

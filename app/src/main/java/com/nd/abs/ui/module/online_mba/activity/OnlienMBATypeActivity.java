@@ -42,6 +42,7 @@ public class OnlienMBATypeActivity extends BaseActivity {
     protected void init() {
 
         //rv_left_menu.setLayoutManager(new LinearLayoutManager(this));
+        setTitle("EMBA专业课");
 
     }
 
@@ -61,10 +62,10 @@ public class OnlienMBATypeActivity extends BaseActivity {
 
     private void initLeftRecyclerView() {
         leaseLeftBeans = new ArrayList<>();
-        leaseLeftBeans.add(new LeaseLeftBean(1,"推荐分类",true));
-        leaseLeftBeans.add(new LeaseLeftBean(2,"电脑",false));
-        leaseLeftBeans.add(new LeaseLeftBean(3,"显示器",false));
-        leaseLeftBeans.add(new LeaseLeftBean(4,"打印机",false));
+        leaseLeftBeans.add(new LeaseLeftBean(1,"最新上架",true));
+        leaseLeftBeans.add(new LeaseLeftBean(2,"管理类",false));
+        leaseLeftBeans.add(new LeaseLeftBean(3,"经济类",false));
+        leaseLeftBeans.add(new LeaseLeftBean(4,"博弈论",false));
 
         final LeftTypeAdapter leftTypeAdapter = new LeftTypeAdapter(this,leaseLeftBeans,R.layout.item_lease_left_menu);
         rv_left_menu.setLayoutManager(new LinearLayoutManager(this));
@@ -87,7 +88,7 @@ public class OnlienMBATypeActivity extends BaseActivity {
         leaseRightBeans.add(new LeaseRightBean(3,"主机","1"));
         leaseRightBeans.add(new LeaseRightBean(4,"平板电脑","1"));
 
-        final RightGoodsAdapter rightGoodsAdapter = new RightGoodsAdapter(this,leaseRightBeans,R.layout.item_lease_right_goods);
+        final RightGoodsAdapter rightGoodsAdapter = new RightGoodsAdapter(this,leaseRightBeans,R.layout.item_new_course);
         rv_right_goods.setLayoutManager(new LinearLayoutManager(OnlienMBATypeActivity.this));
         rv_right_goods.setAdapter(rightGoodsAdapter);
 
