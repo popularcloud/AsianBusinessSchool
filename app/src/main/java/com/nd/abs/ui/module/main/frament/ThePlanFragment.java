@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.FragmentsPagerAdapter;
 import com.nd.abs.widget.CustomViewPager;
@@ -58,12 +59,22 @@ public class ThePlanFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         init();
+        txtActionbarTitle.setText("学习计划");
     }
 
     @Override
     protected void lazyLoad() {
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+        if(isVisibleToUser && getActivity() != null){
+            ImmersionBar.with(getActivity())
+                    .statusBarColor(R.color.white)
+                    .statusBarDarkFont(true).init();
+        }
+    }
 
     @Override
     public void init() {

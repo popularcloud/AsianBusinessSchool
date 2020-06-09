@@ -22,7 +22,6 @@
             android:background="@color/white"
             android:gravity="center"
             android:orientation="horizontal">
-
             <RadioButton
                 android:id="@+id/radio_home"
                 style="@style/main_menu_radiobutton_style"

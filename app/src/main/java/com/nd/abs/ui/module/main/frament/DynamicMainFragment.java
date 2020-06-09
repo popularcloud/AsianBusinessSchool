@@ -115,6 +115,7 @@ public class DynamicMainFragment extends BaseFragment{
             public boolean onBGARefreshLayoutBeginLoadingMore(BGARefreshLayout refreshLayout) {
                 page++;
                // presenter.loadOrders(page, 1);
+                mBGARefreshLayout.endLoadingMore();
                 return true;
             }
         });

@@ -8,6 +8,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
+import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.FragmentsPagerAdapter;
 import com.nd.abs.ui.module.main.frament.DynamicFragment;
@@ -163,6 +164,9 @@ public class MainActivity extends BaseFragmentActivity {
 
     @Override
     public void initView() {
+        ImmersionBar.with(this)
+                .statusBarColor(R.color.white)
+                .statusBarDarkFont(true).init();
     }
 
     @Override
