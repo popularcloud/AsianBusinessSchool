@@ -13,7 +13,8 @@
         android:orientation="horizontal">
             <TextView
                 android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
                 android:layout_height="wrap_content"
                 android:textSize="17sp"
                 android:maxLines="2"
@@ -22,13 +23,13 @@
                 android:text="营销课程听课券" />
             <TextView
                 android:id="@+id/tv_address"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:textColor="@color/black_66"
                 android:textSize="14sp"
                 android:layout_gravity="center_vertical"
-                android:text="班级:1702" />
+                android:text="东莞校区" />
         </LinearLayout>
     <TextView
         android:id="@+id/tv_price"
@@ -55,7 +56,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="取消关注"
+            android:text="立即使用"
             android:background="@drawable/btn_red_bian"
             android:textColor="@color/red_d4"
             android:paddingLeft="12dp"

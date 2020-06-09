@@ -41,6 +41,12 @@
             android:textStyle="bold"
             android:layout_toRightOf="@+id/iv_header"
             android:layout_marginLeft="15dp"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/nav_icon_more_w"/>
         <TextView
             android:id="@+id/tv_learn_class"
             android:layout_width="wrap_content"
@@ -184,6 +190,7 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/tv_audition_record"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -193,6 +200,7 @@
                 android:drawableTop="@mipmap/me_icon_audition"
                 android:text="试听记录"/>
             <TextView
+                android:id="@+id/tv_download"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -203,6 +211,7 @@
                 android:text="下载"/>
 
             <TextView
+                android:id="@+id/tv_collect"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="wrap_content"
@@ -245,6 +254,7 @@
         android:layout_marginTop="10dp"
         android:orientation="horizontal">
         <TextView
+            android:id="@+id/tv_my_class"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
@@ -254,6 +264,7 @@
             android:drawableTop="@mipmap/me_icon_class"
             android:text="我的班级"/>
         <TextView
+            android:id="@+id/tv_my_certificate"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"

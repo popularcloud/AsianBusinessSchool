@@ -83,6 +83,7 @@ public class NewMainFragment extends BaseFragment {
     @Override
     public void init() {
         initRecycleView();
+        img_back.setVisibility(View.GONE);
     }
 
     /**

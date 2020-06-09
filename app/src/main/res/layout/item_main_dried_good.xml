@@ -66,16 +66,26 @@
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
                 android:layout_marginTop="3dp"
-                android:textColor="@color/black_66"
+                android:textColor="@color/gray_dd"
                 android:maxLines="3"
                 android:ellipsize="end"
                 android:text="移除人们的心里障碍移除人们的心里障碍移除人们的心里障碍移除人们的心里障碍移除人们的心里障碍移除人们的心里障碍移除人们的心里障碍移除人们的心里障碍"/>
         </LinearLayout>
-        <ImageView
+        <FrameLayout
             android:layout_width="128dp"
-            android:layout_height="72dp"
-            android:layout_marginLeft="10dp"
-            android:src="@mipmap/ic_no_data"/>
+            android:layout_height="72dp" >
+            <ImageView
+                android:layout_width="128dp"
+                android:layout_height="72dp"
+                android:layout_marginLeft="10dp"
+                android:src="@color/gray_dd"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/lise_icon_play"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+
     </LinearLayout>
     </LinearLayout>
 
@@ -124,17 +134,64 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:orientation="horizontal">
-            <ImageView
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="80dp"
-                android:src="@mipmap/ic_no_data"/>
-            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_marginRight="9dp"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:src="@color/gray_dd"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/black_33"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="8dp"
+                    android:text="卓越团队打造及业绩提升"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/black_66"
+                    android:text="教你如何打造团结及业绩提升"/>
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
-                android:layout_height="80dp"
-                android:layout_marginLeft="15dp"
-                android:src="@mipmap/ic_no_data"/>
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="126dp"
+                    android:src="@color/gray_dd"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="@color/black_33"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="8dp"
+                    android:text="卓越团队打造及业绩提升"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/black_66"
+                    android:text="教你如何打造团结及业绩提升"/>
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -178,17 +235,21 @@
                 android:drawableRight="@mipmap/list_icon_more"
                 android:textSize="14sp" />
         </LinearLayout>
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:orientation="horizontal">
             <ImageView
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="80dp"
-                android:src="@mipmap/ic_no_data"/>
-        </LinearLayout>
+                android:layout_width="match_parent"
+                android:layout_height="211dp"
+                android:src="@color/gray_dd"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/lise_icon_play"
+                android:layout_gravity="center"/>
+        </FrameLayout>
     </LinearLayout>
 
     <LinearLayout
@@ -240,7 +301,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="95dp"
-                android:src="@mipmap/ic_no_data"/>
+                android:src="@color/gray_dd"/>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -303,7 +364,7 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="95dp"
-                android:src="@mipmap/ic_no_data"/>
+                android:src="@color/gray_dd"/>
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_weight="1"
@@ -405,8 +466,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="北京同学交涉会北京同学交涉会北京同学交涉会北京同学交涉会北京同学交涉会北京同学交涉会北京同学交涉"
-                android:textColor="@color/black_66"
-                android:textSize="12sp"/>
+                android:textColor="@color/black_33"
+                android:textSize="14sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -448,9 +509,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_lan_shape"
                     android:layout_alignParentRight="true"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btn_blue_d5"
                     android:paddingBottom="2dp"
                     android:paddingTop="2dp"
                     android:paddingRight="8dp"
@@ -471,8 +531,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="北京同学交涉会北京同学交涉会北京同学交涉会北京同学交涉会北京同学交涉会北京同学交涉会北京同学交涉"
-                android:textColor="@color/black_66"
-                android:textSize="12sp"/>
+                android:textColor="@color/black_33"
+                android:textSize="14sp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -513,9 +573,8 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/button_lan_shape"
                     android:layout_alignParentRight="true"
-                    android:textColor="@color/white"
+                    android:textColor="@color/btn_blue_d5"
                     android:paddingBottom="2dp"
                     android:paddingTop="2dp"
                     android:paddingRight="8dp"
@@ -531,13 +590,15 @@
         android:orientation="vertical"
         android:background="@color/white"
         android:layout_marginTop="8dp"
-        android:padding="15dp">
+        android:paddingBottom="15dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:orientation="horizontal"
             android:focusableInTouchMode="true"
+            android:paddingTop="15dp"
+            android:paddingLeft="15dp"
             android:focusable="true">
             <TextView
                 android:layout_width="0dp"
@@ -568,7 +629,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="8dp"
             android:orientation="horizontal">
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_teacher"
@@ -582,13 +643,15 @@
         android:orientation="vertical"
         android:background="@color/white"
         android:layout_marginTop="8dp"
-        android:padding="15dp">
+        android:paddingBottom="15dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:orientation="horizontal"
             android:focusableInTouchMode="true"
+            android:paddingTop="15dp"
+            android:paddingLeft="15dp"
             android:focusable="true">
             <TextView
                 android:layout_width="0dp"
@@ -619,7 +682,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="8dp"
             android:orientation="horizontal">
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_student"

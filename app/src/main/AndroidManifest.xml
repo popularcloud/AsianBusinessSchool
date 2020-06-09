@@ -32,6 +32,10 @@
         <activity android:name=".ui.module.main.activity.MallActivity"></activity>
         <activity android:name=".ui.module.main.activity.MallDetailActivity"></activity>
         <activity android:name=".ui.module.main.activity.EntertainmentActivity"></activity>
+        <activity android:name=".ui.module.main.activity.MyClassActivity" />
+        <activity android:name=".ui.module.main.activity.MyCertificateActivity" />
+        <activity android:name=".ui.module.main.activity.AuditionHistoryActivity" />
+        <activity android:name=".ui.module.main.activity.DownLoadActivity"></activity>
     </application>
 
 </manifest>

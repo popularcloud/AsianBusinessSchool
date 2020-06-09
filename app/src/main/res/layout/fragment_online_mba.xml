@@ -18,27 +18,28 @@
         lee:tagVerticalSpace="5dp" />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="44dp"
+        android:gravity="center_vertical"
         android:background="@color/white"
         android:orientation="horizontal"
-        android:padding="15dp"
         android:focusableInTouchMode="true"
         android:focusable="true">
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="36dp"
+            android:layout_height="wrap_content"
             android:background="@color/white"
             android:gravity="center_vertical|left"
             android:drawableLeft="@mipmap/ic_blue_line"
+            android:paddingLeft="15dp"
             android:drawablePadding="6dp"
-            android:textColor="@color/black"
+            android:textColor="@color/black_33"
             android:text="最新上架"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
         <TextView
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="36dp"
+            android:layout_height="wrap_content"
             android:paddingRight="15dp"
             android:background="@color/white"
             android:gravity="center_vertical|right"

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dp"
+    android:background="@color/white"
+    android:orientation="horizontal" >
+    <FrameLayout
+        android:layout_width="128dp"
+        android:layout_height="72dp"
+        android:background="@color/gray_dd">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/lise_icon_play"
+            android:layout_gravity="center">
+        </ImageView>
+    </FrameLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="15dp"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:textColor="@color/black_33"
+                android:text="疫情下的中小企业的出路" />
+            <TextView
+                android:id="@+id/tv_specs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/black_66"
+                android:textSize="12sp"
+                android:layout_gravity="center_vertical"
+                android:text="线上课程" />
+            <TextView
+                android:id="@+id/tv_prices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:textSize="10sp"
+                android:textColor="@color/gray_99"
+                android:text="2020/03/09"/>
+        </LinearLayout>
+</LinearLayout>

@@ -1,5 +1,6 @@
 package com.nd.abs.ui.module.main.frament;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gyf.immersionbar.ImmersionBar;
@@ -28,6 +30,8 @@ public class DynamicFragment extends BaseFragment {
     TextView tv_recommend;
     @BindView(R.id.cViewPager)
     CustomViewPager cViewPager;
+    @BindView(R.id.img_back)
+    ImageView img_back;
 
     private DynamicMainFragment dymicMainFragmentFollow;
     private DynamicMainFragment dymicMainFragmentRecommend;
@@ -58,7 +62,7 @@ public class DynamicFragment extends BaseFragment {
         super.setUserVisibleHint(isVisibleToUser);
         if(isVisibleToUser && getActivity() != null){
             ImmersionBar.with(getActivity())
-                    .statusBarColor(R.color.white)
+                    .statusBarColor(R.color.yellow_f9)
                     .statusBarDarkFont(true)
                     .navigationBarColor(R.color.white).init();
         }
@@ -69,6 +73,7 @@ public class DynamicFragment extends BaseFragment {
 
         addFragmenInList();
         bindViewPage();
+        img_back.setVisibility(View.GONE);
     }
 
 

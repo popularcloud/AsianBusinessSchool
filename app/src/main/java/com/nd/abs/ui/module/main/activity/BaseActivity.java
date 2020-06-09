@@ -95,6 +95,7 @@ public abstract class BaseActivity extends FragmentActivity {
 	}
 	protected void setRight(String right) {
 		if (tvqd != null && right != null) {
+			tvqd.setVisibility(View.VISIBLE);
 			tvqd.setText(right);
 		}
 	}

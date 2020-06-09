@@ -7,8 +7,12 @@ import android.view.ViewGroup;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
+import com.nd.abs.ui.module.main.activity.AuditionHistoryActivity;
+import com.nd.abs.ui.module.main.activity.DownLoadActivity;
 import com.nd.abs.ui.module.main.activity.FollowActivity;
 import com.nd.abs.ui.module.main.activity.MyCardCertificateActivity;
+import com.nd.abs.ui.module.main.activity.MyCertificateActivity;
+import com.nd.abs.ui.module.main.activity.MyClassActivity;
 import com.nd.abs.ui.module.main.activity.OrderActivity;
 import com.nd.abs.ui.module.main.activity.PersonalMessageActivity;
 import com.nd.abs.ui.module.main.activity.SettingActivity;
@@ -64,7 +68,8 @@ public class MineFragment extends BaseFragment{
 
     }
 
-    @OnClick({R.id.iv_header,R.id.iv_setting,R.id.tv_me_follow,R.id.tv_follow_me,R.id.tv_order,R.id.tv_cardCertificate})
+    @OnClick({R.id.iv_header,R.id.iv_setting,R.id.tv_me_follow,R.id.tv_follow_me,R.id.tv_order,R.id.tv_cardCertificate
+    ,R.id.tv_my_class,R.id.tv_my_certificate,R.id.tv_audition_record,R.id.tv_download,R.id.tv_collect})
     public void onBtnClick(View view){
         switch (view.getId()){
             case R.id.iv_header:
@@ -85,6 +90,21 @@ public class MineFragment extends BaseFragment{
             case R.id.tv_cardCertificate:
                 IntentUtil.gotoActivity(getActivity(), MyCardCertificateActivity.class);
             break;
+            case R.id.tv_my_class:
+                IntentUtil.gotoActivity(getActivity(), MyClassActivity.class);
+                break;
+            case R.id.tv_my_certificate:
+                IntentUtil.gotoActivity(getActivity(), MyCertificateActivity.class);//StudentIdCard
+                break;
+            case R.id.tv_audition_record:
+                IntentUtil.gotoActivity(getActivity(), AuditionHistoryActivity.class);
+                break;
+            case R.id.tv_download:
+                IntentUtil.gotoActivity(getActivity(), DownLoadActivity.class);//StudentIdCard
+                break;
+            case R.id.tv_collect:
+               // IntentUtil.gotoActivity(getActivity(), MyCertificateActivity.class);//StudentIdCard
+                break;
         }
     }
 }

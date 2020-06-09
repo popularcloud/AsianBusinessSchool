@@ -17,7 +17,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_gravity="top"
-            android:src="@mipmap/image_default_picture"/>
+            android:src="@mipmap/default_portrait_100"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -31,6 +31,8 @@
                 android:textSize="17sp"
                 android:maxLines="2"
                 android:ellipsize="end"
+                android:drawablePadding="2dp"
+                android:drawableRight="@mipmap/list_icon_women"
                 android:textColor="@color/black_33"
                 android:text="刘小美" />
             <TextView

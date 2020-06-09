@@ -11,6 +11,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gyf.immersionbar.ImmersionBar;
@@ -36,6 +37,8 @@ public class OnLineMBAFragment extends BaseFragment {
     TagsLayout tl_tags;
     @BindView(R.id.rv_data)
     RecyclerView rv_data;
+    @BindView(R.id.img_back)
+    ImageView img_back;
 
     List<SearchKeyWordBean> searchKeyWordBeenList;
     private List<String> datas = new ArrayList<>();
@@ -77,9 +80,10 @@ public class OnLineMBAFragment extends BaseFragment {
     @Override
     public void init() {
 
-        txtActionbarTitle.setText("线上MBA");
+        txtActionbarTitle.setText("线上课程");
         tl_tags.setVisibility(View.VISIBLE);
         tl_tags.removeAllViews();
+        img_back.setVisibility(View.GONE);
 
         searchKeyWordBeenList = new ArrayList<>();
         searchKeyWordBeenList.add(new SearchKeyWordBean("全部520"));
@@ -90,11 +94,16 @@ public class OnLineMBAFragment extends BaseFragment {
             SearchKeyWordBean searchKeyWordBean = searchKeyWordBeenList.get(i);
             final TextView textView = new TextView(getContext());
             textView.setText(searchKeyWordBean.getKeywordName());
-            textView.setTextColor(Color.parseColor("#999999"));
-            textView.setTextSize(Dimension.SP, 12);
+            if(i == 0){
+                textView.setTextColor(Color.parseColor("#d42e2c"));
+            }else{
+                textView.setTextColor(Color.parseColor("#999999"));
+            }
+
+            textView.setTextSize(Dimension.SP, 14);
             textView.setGravity(Gravity.CENTER);
             textView.setPadding(25, 15, 25, 15);
-            textView.setBackgroundResource(R.drawable.round_square_gray_big);
+            //textView.setBackgroundResource(R.drawable.round_square_gray_big);
             textView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

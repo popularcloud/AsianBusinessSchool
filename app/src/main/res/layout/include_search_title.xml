@@ -36,11 +36,11 @@
                 android:layout_marginLeft="15dp"
                 android:hint="请输入搜索的课程"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/gray_99"
                 android:id="@+id/et_search"
                 android:imeOptions="actionSearch"
                 android:maxLines="1"
-                android:textSize="12sp"
+                android:textSize="14sp"
                 android:background="@null"
                 android:drawablePadding="10dp"
                 android:drawableLeft="@mipmap/map_search_gray"/>
@@ -51,14 +51,13 @@
                 android:visibility="gone"/>
         </LinearLayout>
     </LinearLayout>
-    <TextView
+    <ImageView
         android:id="@+id/tv_search"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center"
+        android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:layout_marginRight="15dp"
-        android:text="搜索"
-        android:textSize="15sp"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/nav_icon_news_black"
         android:visibility="visible"/>
 </LinearLayout>

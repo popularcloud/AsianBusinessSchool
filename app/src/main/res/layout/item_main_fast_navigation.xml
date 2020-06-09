@@ -64,7 +64,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="10dp"
         android:paddingBottom="10dp"
         android:orientation="horizontal">
         <LinearLayout
@@ -74,8 +74,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:src="@mipmap/home_icon_mba"/>
             <TextView
@@ -83,6 +83,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
                 android:textColor="@color/black"
+                android:layout_marginTop="6dp"
                 android:gravity="center"
                 android:text="线下MBA" />
         </LinearLayout>
@@ -93,8 +94,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:src="@mipmap/home_icon_mall"/>
             <TextView
@@ -102,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
                 android:textColor="@color/black"
+                android:layout_marginTop="6dp"
                 android:gravity="center"
                 android:text="校友商城" />
         </LinearLayout>
@@ -112,8 +114,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:src="@mipmap/home_icon_live"/>
             <TextView
@@ -122,6 +124,7 @@
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:gravity="center"
+                android:layout_marginTop="6dp"
                 android:text="直播" />
         </LinearLayout>
         <LinearLayout
@@ -131,8 +134,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="52dp"
-                android:layout_height="52dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:src="@mipmap/home_icon_activity"/>
             <TextView
@@ -141,6 +144,7 @@
                 android:textSize="12sp"
                 android:textColor="@color/black"
                 android:gravity="center"
+                android:layout_marginTop="6dp"
                 android:text="活动" />
         </LinearLayout>
     </LinearLayout>
@@ -176,7 +180,7 @@
         </LinearLayout>
         <View
             android:layout_width="match_parent"
-            android:layout_height="8px" android:background="@color/f0_gray_line" android:layout_margin="5dp"/>
+            android:layout_height="2px" android:background="@color/f0_gray_line" android:layout_margin="10dp"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

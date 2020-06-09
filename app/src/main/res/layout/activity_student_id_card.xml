@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:background="@color/f0_gray_line"
+    android:orientation="vertical">
+    <include layout="@layout/include_title_no_bg"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="28dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:textColor="@color/black_33"
+                android:text="studentIdCard"/>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:src="@mipmap/default_portrait_100" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_33"
+                android:gravity="center"
+                android:layout_marginTop="24dp"
+                android:textSize="12sp"
+                android:text="idCard: 2222222"></TextView>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/btn_blue_d5"
+            android:paddingTop="20dp"
+            android:paddingLeft="15dp"
+            android:paddingBottom="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textSize="24sp"
+                android:textColor="@color/white"
+                android:text="张三三"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:gravity="left"
+                android:layout_marginTop="15dp"
+                android:textSize="16sp"
+                android:text="已学习课程：88" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:gravity="left"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                android:text="学习时间：66h" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:gravity="left"
+                android:layout_marginTop="4dp"
+                android:textSize="16sp"
+                android:text="动态：35" />
+        </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="132dp"
+        android:layout_height="132dp"
+        android:background="@color/gray_dd"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="48dp"/>
+</LinearLayout>
