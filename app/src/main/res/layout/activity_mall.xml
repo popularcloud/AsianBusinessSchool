@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="125dp"
-        android:src="@mipmap/image_default_picture"
+        android:src="@color/gray_dd"
         android:scaleType="fitXY"/>
     <LinearLayout
         android:layout_width="match_parent"

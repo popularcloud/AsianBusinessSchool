@@ -12,7 +12,7 @@
         android:layout_height="211dp"
         android:layout_gravity="center_vertical"
         android:scaleType="fitXY"
-        android:src="@mipmap/image_default_picture"/>
+        android:src="@color/gray_dd"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/f0_gray_line"
     android:fitsSystemWindows="true">
     <ScrollView
         android:layout_width="match_parent"
@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:paddingBottom="10dp"
+            android:background="@color/white"
             android:orientation="horizontal">
             <LinearLayout
                 android:id="@+id/ll_major_courses"
@@ -37,10 +38,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:src="@mipmap/home_integral"/>
+                    android:src="@mipmap/mba_icon_course"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -56,10 +57,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:src="@mipmap/home_integral"/>
+                    android:src="@mipmap/mba_icon_leader"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -75,10 +76,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:src="@mipmap/home_integral"/>
+                    android:src="@mipmap/home_icon_ceo"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -94,10 +95,10 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_gravity="center"
-                    android:src="@mipmap/home_integral"/>
+                    android:src="@mipmap/home_icon_tbod"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -112,7 +113,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:layout_marginTop="15dp"
-            android:layout_marginLeft="20dp"
+            android:paddingLeft="20dp"
             android:orientation="horizontal"
             android:focusableInTouchMode="true"
             android:focusable="true">
@@ -147,6 +148,7 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_data"
             android:layout_width="match_parent"
+            android:background="@color/white"
             android:paddingTop="15dp"
             android:paddingLeft="15dp"
             android:layout_height="0dp"
@@ -158,24 +160,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/white"
         android:layout_alignParentBottom="true"
         android:padding="15dp">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:drawableLeft="@mipmap/det_icon_service"
             android:textSize="14sp"
+            android:drawablePadding="2dp"
             android:textColor="@color/gray_99"
             android:layout_marginRight="30dp"
             android:text="招生顾问"/>
-        <TextView
+        <View
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="wrap_content"
+            android:layout_height="1dp"></View>
+        <TextView
+            android:layout_width="160dp"
+            android:layout_height="32dp"
             android:gravity="center"
             android:textSize="14sp"
             android:textColor="@color/white"
             android:paddingTop="5dp"
+            android:layout_marginRight="33dp"
             android:paddingBottom="5dp"
             android:background="@drawable/btn_blue_fill"
             android:text="报名"/>

@@ -1,6 +1,6 @@
 package com.nd.abs.ui.module.login.activity;
 
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -9,16 +9,23 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.nd.abs.R;
-import com.nd.abs.ui.module.main.activity.BaseActivity;
+import com.nd.abs.base.BaseActivity;
+import com.nd.abs.base.BaseModel;
+import com.nd.abs.ui.module.login.LoginBean;
+import com.nd.abs.ui.module.login.LoginPresenter;
+import com.nd.abs.ui.module.login.LoginView;
+import com.nd.abs.ui.module.login.RegisterBean;
 import com.nd.abs.ui.module.main.activity.MainActivity;
 import com.nd.abs.utils.CommonUtils;
 import com.nd.abs.utils.IntentUtil;
+import com.nd.abs.utils.JsonUtil;
+import com.nd.abs.utils.SharedPreferencesUtils;
 import com.nd.abs.utils.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class LoginActivity extends BaseActivity {
+public class LoginActivity extends BaseActivity<LoginPresenter> implements LoginView {
 
     @BindView(R.id.edtPhone)
     EditText edtPhone;
@@ -41,6 +48,9 @@ public class LoginActivity extends BaseActivity {
     @BindView(R.id.txtChangeLogin)
     TextView txtChangeLogin;
 
+    @BindView(R.id.btnSureLogin)
+    TextView btnSureLogin;
+
 
     /**
      * 手机号
@@ -48,11 +58,17 @@ public class LoginActivity extends BaseActivity {
     private String phone;
 
     /**
-     * 登录方式 1密码登录  2账号登录
+     * 登录方式 1密码登录  2账号登录 3.注册
      */
-    private int loginType;
+    private int loginType = 1;
     public final int LOGIN_TYPE_BY_PWD = 1;
     public final int LOGIN_TYPE_BY_CODE = 2;
+    public final int REGISTER_TYPE_BY_PWD = 3;
+
+    @Override
+    protected LoginPresenter createPresenter() {
+        return new LoginPresenter(this);
+    }
 
     @Override
     protected int getContentViewId(Bundle savedInstanceState) {
@@ -62,11 +78,17 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void init() {
 
-        //设置短信登录优先
-        ll_pwd.setVisibility(View.GONE);
-        ll_code.setVisibility(View.VISIBLE);
-        txtFindPassWord.setVisibility(View.INVISIBLE);
-        setTitle("短信登录");
+
+        ll_code.setVisibility(View.GONE);
+        ll_pwd.setVisibility(View.VISIBLE);
+        txtFindPassWord.setVisibility(View.VISIBLE);
+        setTitle("账号登录");
+
+
+        String userId = (String) SharedPreferencesUtils.getParam(this,"userId","0");
+        if(!"0".equals(userId)){
+           IntentUtil.gotoActivity(this, MainActivity.class);
+        }
 
     }
 
@@ -98,6 +120,7 @@ public class LoginActivity extends BaseActivity {
                     ll_pwd.setVisibility(View.VISIBLE);
                     txtFindPassWord.setVisibility(View.VISIBLE);
                     setTitle("账号登录");
+                    btnSureLogin.setText("登录");
                 }else{
                     txtChangeLogin.setText("密码登录");
                     loginType = LOGIN_TYPE_BY_CODE;
@@ -110,17 +133,38 @@ public class LoginActivity extends BaseActivity {
                     ll_code.setVisibility(View.VISIBLE);
                     txtFindPassWord.setVisibility(View.INVISIBLE);
                     setTitle("短信登录");
+                    btnSureLogin.setText("登录");
                 }
-
                 break;
             case R.id.txtFindPassWord:
                 //IntentUtil.gotoActivity(this, FindPasswordActivity.class);
                 break;
             case R.id.btnSureLogin:
-                IntentUtil.gotoActivity(this, MainActivity.class);
+              //  IntentUtil.gotoActivity(this, MainActivity.class);
+
+                if(loginType == REGISTER_TYPE_BY_PWD){ //
+                    register(true);
+                }else if(loginType == LOGIN_TYPE_BY_PWD){
+                    register(false);
+                }else if(loginType == LOGIN_TYPE_BY_CODE){
+                   ToastUtil.showToast(LoginActivity.this,"请选择密码登陆");
+                }
+
+
                 break;
             case R.id.tvRegist:
                 //IntentUtil.gotoActivityForResult(this, RegisterActivity.class, RESULT_FIRST_USER);
+                loginType = REGISTER_TYPE_BY_PWD;
+                   /* tv_zhdl.setBackgroundResource(R.drawable.button_login_select);
+                    tv_dxdl.setBackgroundResource(R.drawable.button_login_select2);
+                    tv_zhdl.setTextColor(getResources().getColor(R.color.blue_00aaf5));
+                    tv_dxdl.setTextColor(getResources().getColor(R.color.white));*/
+                // ll_regist.setVisibility(View.VISIBLE);
+                ll_code.setVisibility(View.GONE);
+                ll_pwd.setVisibility(View.VISIBLE);
+                txtFindPassWord.setVisibility(View.VISIBLE);
+                setTitle("注册");
+                btnSureLogin.setText("注册");
                 break;
             case R.id.btnCode:
                 phone = edtPhone.getText().toString().trim();
@@ -141,5 +185,63 @@ public class LoginActivity extends BaseActivity {
               //  umShareAPI.getPlatformInfo(this, SHARE_MEDIA.WEIXIN,authListener);
                 break;
         }
+    }
+
+    private void register(Boolean isRegister){
+        phone = edtPhone.getText().toString().trim();
+        String psd = edtPassword.getText().toString().trim();
+        if (TextUtils.isEmpty(phone)) {
+            ToastUtil.showToast(this, "请输入手机号码");
+            return;
+        }
+        if (TextUtils.isEmpty(psd)) {
+            ToastUtil.showToast(this, "请输入密码");
+            return;
+        }
+
+        if(isRegister){
+            mPresenter.register(phone,psd);
+        }else{
+            mPresenter.login(phone,psd);
+        }
+
+
+
+    }
+
+
+    @Override
+    public void onLoginSuccess(BaseModel<LoginBean> data) {
+        if(data != null){
+            LoginBean loginBean = data.getData();
+            String loginStr = JsonUtil.parserObjectToGson(loginBean);
+            SharedPreferencesUtils.setParam(this,"user",loginStr);
+            SharedPreferencesUtils.setParam(this,"userId",loginBean.getUserId());
+
+            IntentUtil.gotoActivity(this, MainActivity.class);
+        }
+    }
+
+    @Override
+    public void onRegisterSuccess(BaseModel<Object> data) {
+        ToastUtil.showToast(LoginActivity.this,"注册成功！请登陆");
+
+        txtChangeLogin.setText("短信登录");
+        loginType = LOGIN_TYPE_BY_PWD;
+                   /* tv_zhdl.setBackgroundResource(R.drawable.button_login_select);
+                    tv_dxdl.setBackgroundResource(R.drawable.button_login_select2);
+                    tv_zhdl.setTextColor(getResources().getColor(R.color.blue_00aaf5));
+                    tv_dxdl.setTextColor(getResources().getColor(R.color.white));*/
+        // ll_regist.setVisibility(View.VISIBLE);
+        ll_code.setVisibility(View.GONE);
+        ll_pwd.setVisibility(View.VISIBLE);
+        txtFindPassWord.setVisibility(View.VISIBLE);
+        setTitle("账号登录");
+        btnSureLogin.setText("登录");
+    }
+
+    @Override
+    public void onGetDataFail() {
+
     }
 }

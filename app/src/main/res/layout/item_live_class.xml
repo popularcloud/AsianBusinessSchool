@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="211dp"
             android:scaleType="fitXY"
-            android:src="@mipmap/image_default_picture"/>
+            android:src="@color/gray_dd"/>
         <TextView
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"

@@ -1,16 +1,11 @@
 package com.nd.abs.ui.module.main.activity;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 
 import com.nd.abs.R;
-import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
 
 /**
  *

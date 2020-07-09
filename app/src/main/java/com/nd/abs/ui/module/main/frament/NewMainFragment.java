@@ -12,17 +12,23 @@ import android.widget.ImageView;
 
 import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
+import com.nd.abs.base.BaseFragment;
+import com.nd.abs.base.BaseModel;
 import com.nd.abs.ui.module.main.adpter.MainContentAdapter;
 import com.nd.abs.ui.module.main.bean.ADInfo;
+import com.nd.abs.ui.module.main.bean.BannerInfo;
+import com.nd.abs.ui.module.main.present.MainFragementPresenter;
+import com.nd.abs.ui.module.main.view.MainFragmentView;
 import com.nd.abs.utils.BGARefreshLayoutUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 
-public class NewMainFragment extends BaseFragment {
+public class NewMainFragment extends BaseFragment<MainFragementPresenter> implements MainFragmentView {
 
 
     @BindView(R.id.rv_main_content)
@@ -56,16 +62,10 @@ public class NewMainFragment extends BaseFragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        init();
-        if(getActivity() != null){
-        }
-    }
 
-    @Override
-    protected void lazyLoad() {
-        if(getActivity() != null){
-
-        }
+        mPresenter = createPresenter();
+        initRecycleView();
+        img_back.setVisibility(View.GONE);
     }
 
     @Override
@@ -76,13 +76,6 @@ public class NewMainFragment extends BaseFragment {
                     .statusBarColor(R.color.white)
                     .statusBarDarkFont(true).init();
         }
-    }
-
-
-    @Override
-    public void init() {
-        initRecycleView();
-        img_back.setVisibility(View.GONE);
     }
 
     /**
@@ -113,21 +106,6 @@ public class NewMainFragment extends BaseFragment {
     }
 
     @Override
-    public void initEngines(View view) {
-
-    }
-
-    @Override
-    public void getIntentData() {
-
-    }
-
-    @Override
-    public void setListener() {
-
-    }
-
-    @Override
     public void onResume() {
         super.onResume();
     }
@@ -141,7 +119,7 @@ public class NewMainFragment extends BaseFragment {
      * 获取轮播图
      */
     public void getWheelPic() {
-
+        mPresenter.getBanner();
     }
 
     /**
@@ -159,75 +137,32 @@ public class NewMainFragment extends BaseFragment {
 
     }
 
+    @Override
+    protected MainFragementPresenter createPresenter() {
+        return new MainFragementPresenter(this);
+    }
 
+    @Override
+    public void onGetBannerSuccess(BaseModel<List<BannerInfo>> data) {
+        if(data != null && data.getData() != null && data.getData().size() > 0){
 
-
-    /**
-     * 初始化状态栏
-     */
-   /* private void initStatusBar() {
-        rv_main_content.addOnScrollListener(new RecyclerView.OnScrollListener() {
-            @Override
-            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
-                super.onScrollStateChanged(recyclerView, newState);
+            List<ADInfo> adInfos = new ArrayList<>();
+            for(int i = 0; i < data.getData().size(); i ++){
+                ADInfo adInfo = new ADInfo();
+                adInfo.setAdvertisingImageUrl(data.getData().get(i).getSlideshowUrl());
+                adInfo.setAdvertisingTitle("title");
+                //adInfo.setAdvertisingId();
+                adInfos.add(adInfo);
             }
-
-            @Override
-            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
-                super.onScrolled(recyclerView, dx, dy);
-
-                scrollDistance = scrollDistance+dy;
-
-               // Log.d("联网成功","scrollDistance===="+scrollDistance);
-                    if(scrollDistance >= 88){
-                        if(rl_title.getVisibility() == View.GONE){
-                            rl_title.setVisibility(View.VISIBLE);
-                            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) rl_title.getLayoutParams();
-                            layoutParams.topMargin = DisplayUtil.getStatusBarHeight(getContext());
-                            rl_title.setLayoutParams(layoutParams);
-
-                            txtActionbarTitle.setText("首页");
-                            img_back.setVisibility(View.GONE);
-                            ImmersionBar.with(getActivity())
-                                    .statusBarColor(R.color.white)
-                                    .statusBarDarkFont(true)
-                                    .navigationBarColor(R.color.white).init();
-                        }
-
-                    }else{
-                        if(rl_title.getVisibility() == View.VISIBLE) {
-                            rl_title.setVisibility(View.GONE);
-                            ImmersionBar.with(getActivity())
-                                    .transparentStatusBar()
-                                    .statusBarDarkFont(false)
-                                    .init();
-                        }
-                    }
+            if(mainContentAdapter != null){
+                mainContentAdapter.setImageWheelData(adInfos);
             }
-        });
-
-
-        *//**
-         * 切换时状态栏
-         *//*
-        if(scrollDistance >= 88){
-            rl_title.setVisibility(View.VISIBLE);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) rl_title.getLayoutParams();
-            layoutParams.topMargin = DisplayUtil.getStatusBarHeight(getContext());
-            rl_title.setLayoutParams(layoutParams);
-
-            txtActionbarTitle.setText("首页");
-            img_back.setVisibility(View.GONE);
-            ImmersionBar.with(getActivity())
-                    .statusBarColor(R.color.white)
-                    .statusBarDarkFont(true)
-                    .navigationBarColor(R.color.white).init();
-        }else{
-            rl_title.setVisibility(View.GONE);
-            ImmersionBar.with(getActivity())
-                    .transparentStatusBar()
-                    .statusBarDarkFont(false)
-                    .init();
         }
-    }*/
+
+    }
+
+    @Override
+    public void onGetDataFail() {
+
+    }
 }

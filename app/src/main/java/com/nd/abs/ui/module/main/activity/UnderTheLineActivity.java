@@ -9,6 +9,8 @@ import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
 import com.nd.abs.utils.IntentUtil;
 
+import org.byteam.superadapter.OnItemClickListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,6 +27,8 @@ public class UnderTheLineActivity extends BaseActivity {
     RecyclerView rv_data;
 
     private List<String> datas = new ArrayList<>();
+
+    RecentCoursesAdapter recentCoursesAdapter;
 
     @Override
     protected int getContentViewId(Bundle savedInstanceState) {
@@ -73,6 +77,13 @@ public class UnderTheLineActivity extends BaseActivity {
         datas.add("");
         datas.add("");
         rv_data.setLayoutManager(new GridLayoutManager(this,2));
-        rv_data.setAdapter(new RecentCoursesAdapter(this,datas,R.layout.item_recent_courses));
+        recentCoursesAdapter = new RecentCoursesAdapter(this,datas,R.layout.item_recent_courses);
+        rv_data.setAdapter(recentCoursesAdapter);
+        recentCoursesAdapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(View itemView, int viewType, int position) {
+                IntentUtil.gotoActivity(UnderTheLineActivity.this,CoursesDetailActivity.class);
+            }
+        });
     }
 }

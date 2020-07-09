@@ -13,6 +13,7 @@ import com.nd.abs.ui.module.main.activity.FollowActivity;
 import com.nd.abs.ui.module.main.activity.MyCardCertificateActivity;
 import com.nd.abs.ui.module.main.activity.MyCertificateActivity;
 import com.nd.abs.ui.module.main.activity.MyClassActivity;
+import com.nd.abs.ui.module.main.activity.MyCollectActivity;
 import com.nd.abs.ui.module.main.activity.OrderActivity;
 import com.nd.abs.ui.module.main.activity.PersonalMessageActivity;
 import com.nd.abs.ui.module.main.activity.SettingActivity;
@@ -102,7 +103,7 @@ public class MineFragment extends BaseFragment{
                 IntentUtil.gotoActivity(getActivity(), DownLoadActivity.class);//StudentIdCard
                 break;
             case R.id.tv_collect:
-               // IntentUtil.gotoActivity(getActivity(), MyCertificateActivity.class);//StudentIdCard
+                IntentUtil.gotoActivity(getActivity(), MyCollectActivity.class);//StudentIdCard
                 break;
         }
     }
