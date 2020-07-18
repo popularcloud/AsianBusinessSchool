@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
+import com.nd.abs.ui.module.main.bean.MBAInfo;
 import com.nd.abs.utils.IntentUtil;
 
 import org.byteam.superadapter.OnItemClickListener;
@@ -25,7 +26,7 @@ public class MajorCoursesActivity extends BaseActivity{
     RecyclerView rv_main_content;
 
 
-    private List<String> datas = new ArrayList<>();
+    private List<MBAInfo> datas = new ArrayList<>();
 
     @Override
     protected int getContentViewId(Bundle savedInstanceState) {
@@ -36,13 +37,6 @@ public class MajorCoursesActivity extends BaseActivity{
     protected void init() {
 
         setTitle("主修课");
-
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
         rv_main_content.setLayoutManager(new LinearLayoutManager(this));
         RecentCoursesAdapter recentCoursesAdapter = new RecentCoursesAdapter(this,datas,R.layout.item_major_courses);
         rv_main_content.setAdapter(recentCoursesAdapter);

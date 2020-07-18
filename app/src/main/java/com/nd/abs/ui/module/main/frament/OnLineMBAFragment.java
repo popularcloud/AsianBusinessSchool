@@ -18,6 +18,7 @@ import com.gyf.immersionbar.ImmersionBar;
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.activity.SeeVideoActivity;
 import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
+import com.nd.abs.ui.module.main.bean.MBAInfo;
 import com.nd.abs.ui.module.main.bean.SearchKeyWordBean;
 import com.nd.abs.ui.module.online_mba.activity.OnlienMBATypeActivity;
 import com.nd.abs.utils.IntentUtil;
@@ -41,7 +42,7 @@ public class OnLineMBAFragment extends BaseFragment {
     ImageView img_back;
 
     List<SearchKeyWordBean> searchKeyWordBeenList;
-    private List<String> datas = new ArrayList<>();
+    private List<MBAInfo> datas = new ArrayList<>();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -117,10 +118,6 @@ public class OnLineMBAFragment extends BaseFragment {
     }
 
     private void initRecycleView() {
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
         rv_data.setLayoutManager(new LinearLayoutManager(getContext()));
 
         RecentCoursesAdapter recentCoursesAdapter = new RecentCoursesAdapter(getContext(),datas,R.layout.item_new_course);

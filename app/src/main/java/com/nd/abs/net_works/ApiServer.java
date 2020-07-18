@@ -5,6 +5,7 @@ import com.nd.abs.base.BaseModel;
 import com.nd.abs.ui.module.login.LoginBean;
 import com.nd.abs.ui.module.login.RegisterBean;
 import com.nd.abs.ui.module.main.bean.BannerInfo;
+import com.nd.abs.ui.module.main.bean.MBAInfo;
 import com.nd.abs.ui.module.main.bean.MyClassInfo;
 
 import java.util.List;
@@ -39,6 +40,11 @@ public interface ApiServer {
     @FormUrlEncoded
     Observable<BaseModel<List<MyClassInfo>>> getMyClass(@Field("userId") String type
     );
+
+    //获取近期mba课程
+    @POST("backstage/obtainMBA")
+    @FormUrlEncoded
+    Observable<BaseModel<List<MBAInfo>>> getMBA(@Field("userId") String userId);
 
   /*  //验证码
     @GET("tools/User.ashx")

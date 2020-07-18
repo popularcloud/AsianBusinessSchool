@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
+import com.nd.abs.ui.module.main.bean.MBAInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,11 +39,7 @@ public class DriedGoodViewHolder extends BaseViewHolder{
         linearLayoutManagerStudent.setOrientation(LinearLayoutManager.HORIZONTAL);
         rv_student.setLayoutManager(linearLayoutManagerStudent);
 
-        List<String> datas = new ArrayList<>();
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
+        List<MBAInfo> datas = new ArrayList<>();
         RecentCoursesAdapter recentCoursesAdapter = new RecentCoursesAdapter(context,datas,R.layout.item_recycle_img);
 
         rv_teacher.setAdapter(recentCoursesAdapter);

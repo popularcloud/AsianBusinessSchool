@@ -6,7 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.nd.abs.R;
+import com.nd.abs.base.BaseActivity;
+import com.nd.abs.base.BaseModel;
 import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
+import com.nd.abs.ui.module.main.bean.MBAInfo;
+import com.nd.abs.ui.module.main.present.UnderTheLinePresenter;
+import com.nd.abs.ui.module.main.view.UnderTheLineView;
 import com.nd.abs.utils.IntentUtil;
 
 import org.byteam.superadapter.OnItemClickListener;
@@ -20,15 +25,20 @@ import butterknife.OnClick;
 /**
  *
  */
-public class UnderTheLineActivity extends BaseActivity {
+public class UnderTheLineActivity extends BaseActivity<UnderTheLinePresenter> implements UnderTheLineView {
 
 
     @BindView(R.id.rv_data)
     RecyclerView rv_data;
 
-    private List<String> datas = new ArrayList<>();
+    private List<MBAInfo> datas = new ArrayList<>();
 
     RecentCoursesAdapter recentCoursesAdapter;
+
+    @Override
+    protected UnderTheLinePresenter createPresenter() {
+        return new UnderTheLinePresenter(this);
+    }
 
     @Override
     protected int getContentViewId(Bundle savedInstanceState) {
@@ -43,7 +53,7 @@ public class UnderTheLineActivity extends BaseActivity {
 
     @Override
     protected void initGetData() {
-
+        mPresenter.getMBA();
     }
 
     @Override
@@ -70,12 +80,6 @@ public class UnderTheLineActivity extends BaseActivity {
     }
 
     private void initRecycleView() {
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
         rv_data.setLayoutManager(new GridLayoutManager(this,2));
         recentCoursesAdapter = new RecentCoursesAdapter(this,datas,R.layout.item_recent_courses);
         rv_data.setAdapter(recentCoursesAdapter);
@@ -86,4 +90,18 @@ public class UnderTheLineActivity extends BaseActivity {
             }
         });
     }
+
+    @Override
+    public void onGetDateSuccess(BaseModel<List<MBAInfo>> data) {
+        if(data != null && data.getData() != null && data.getData().size() > 0){
+            datas = data.getData();
+            recentCoursesAdapter.replaceAll(datas);
+        }
+    }
+
+    @Override
+    public void onGetDataFail() {
+
+    }
+
 }

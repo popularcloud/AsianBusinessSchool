@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.nd.abs.R;
 import com.nd.abs.ui.module.main.adpter.RecentCoursesAdapter;
+import com.nd.abs.ui.module.main.bean.MBAInfo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +22,7 @@ public class LiveClassActivity extends BaseActivity{
     RecyclerView rv_main_content;
 
 
-    private List<String> datas = new ArrayList<>();
+    private List<MBAInfo> datas = new ArrayList<>();
 
     @Override
     protected int getContentViewId(Bundle savedInstanceState) {
@@ -32,13 +33,6 @@ public class LiveClassActivity extends BaseActivity{
     protected void init() {
 
         setTitle("直播");
-
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
         rv_main_content.setLayoutManager(new LinearLayoutManager(this));
         rv_main_content.setAdapter(new RecentCoursesAdapter(this,datas,R.layout.item_live_class));
     }

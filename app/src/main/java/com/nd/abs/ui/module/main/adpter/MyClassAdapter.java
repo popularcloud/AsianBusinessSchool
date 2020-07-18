@@ -2,6 +2,7 @@ package com.nd.abs.ui.module.main.adpter;
 
 import android.content.Context;
 
+import com.nd.abs.R;
 import com.nd.abs.ui.module.main.bean.LearnPlanBean;
 import com.nd.abs.ui.module.main.bean.MyClassInfo;
 
@@ -21,7 +22,11 @@ public class MyClassAdapter extends SuperAdapter<MyClassInfo> {
     @Override
     public void onBind(SuperViewHolder holder, int viewType, int layoutPosition, MyClassInfo item) {
 
-
+        holder.setText(R.id.tv_name,item.getUserName());
+        holder.setText(R.id.tv_class_position,item.getClassPosition());
+        holder.setText(R.id.tv_work_unit,item.getJobUnit());
+        holder.setText(R.id.tv_post,item.getPosition());
+        holder.setText(R.id.tv_phone,item.getContactNumber());
 
     }
 }
