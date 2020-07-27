@@ -6,14 +6,19 @@ import com.nd.abs.ui.module.login.LoginBean;
 import com.nd.abs.ui.module.login.RegisterBean;
 import com.nd.abs.ui.module.main.bean.BannerInfo;
 import com.nd.abs.ui.module.main.bean.MBAInfo;
+import com.nd.abs.ui.module.main.bean.MyCertificateBean;
 import com.nd.abs.ui.module.main.bean.MyClassInfo;
+import com.nd.abs.ui.module.main.bean.MyCreditInfo;
 
 import java.util.List;
 
 import io.reactivex.Observable;
+import okhttp3.MultipartBody;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 
 public interface ApiServer {
 
@@ -41,10 +46,29 @@ public interface ApiServer {
     Observable<BaseModel<List<MyClassInfo>>> getMyClass(@Field("userId") String type
     );
 
+    @POST("backstage/getCredit")
+    @FormUrlEncoded
+    Observable<BaseModel<List<MyCreditInfo>>> getCredit(@Field("userId") String type
+    );
+
     //获取近期mba课程
     @POST("backstage/obtainMBA")
     @FormUrlEncoded
     Observable<BaseModel<List<MBAInfo>>> getMBA(@Field("userId") String userId);
+
+    //获取近期mba课程
+    @POST("backstage/getCertificate")
+    @FormUrlEncoded
+    Observable<BaseModel<List<MyCertificateBean>>> getCertificate(@Field("userId") String userId);
+
+    @Multipart
+    @POST("backstage/picUpload")
+    Observable<BaseModel<Object>> uploadPicToService(@Part() MultipartBody.Part file);
+
+    @FormUrlEncoded
+    @POST("backstage/upCertificate")
+    Observable<BaseModel<Object>> uploadPicMsg(@Field("userId") String type,
+                                               @Field("certificatePath") String certificatePath);
 
   /*  //验证码
     @GET("tools/User.ashx")

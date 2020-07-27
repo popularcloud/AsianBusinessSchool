@@ -54,4 +54,6 @@ dependencies {
 
     //日志
     implementation 'com.orhanobut:logger:2.2.0'
+
+    implementation 'com.github.wildma:PictureSelector:1.1.1'
 }
